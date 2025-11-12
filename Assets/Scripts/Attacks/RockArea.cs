@@ -4,11 +4,19 @@ using UnityEngine;
 public class RockArea : AttackArea
 {
     public Transform start;
-    public Hand handPrefab;
-    public Player player;
+    public Transform end;
+
+    private SpriteRenderer spriteRenderer;
+    public Rock rockPrefab;
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public override void Activate()
     {
+        spriteRenderer.enabled = true;
         StartCoroutine(Execute());
     }
 
@@ -16,7 +24,9 @@ public class RockArea : AttackArea
     {
         yield return new WaitForSeconds(2f);
 
-        Hand newHand = Instantiate(handPrefab, start.position, Quaternion.identity);
-        newHand.SetPlayer(player.GetTransform());
+        spriteRenderer.enabled = false;
+
+        Rock newRock = Instantiate(rockPrefab, start.position, Quaternion.identity);
+        newRock.Move(end);
     }
 }
