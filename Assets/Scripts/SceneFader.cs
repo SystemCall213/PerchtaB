@@ -8,7 +8,7 @@ public class SceneFader : MonoBehaviour
 
     [Header("Fade Settings")]
     public CanvasGroup fadeCanvasGroup;
-    public float fadeDuration = 5f;
+    public float fadeDuration = 2f;
     public Color fadeColor = Color.black;
 
     private void Awake()

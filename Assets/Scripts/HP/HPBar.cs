@@ -15,7 +15,7 @@ public class HPBar : MonoBehaviour
         Populate(numOfHp);
     }
 
-    public void TakeDmg(int numOfDmg)
+    public int TakeDmg(int numOfDmg)
     {
         for (int i = 0; i < numOfDmg; i++)
         {
@@ -24,6 +24,7 @@ public class HPBar : MonoBehaviour
 
             hPPoint.Kill();
         }
+        return hPPoints.Count;
     }
 
     public void Heal(int healAmount)

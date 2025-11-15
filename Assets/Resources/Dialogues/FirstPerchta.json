@@ -1,0 +1,54 @@
+{
+  "lines": [
+    {
+      "speaker": "Perchten",
+      "text": "… Chiiiild. Poor little child. Yourn mommy left you, didn't she?"
+    },
+    {
+      "text": "… Me thinks it's for the best, is it not? Just looook at this filthy, rotten, BUGHOLE of a house."
+    },
+    {
+      "text": "… Me dessspise that hideous filth, that yourn ROTTEN mommy allowed in your little house."
+    },
+    {
+      "choices": [
+        {
+          "speaker": "",
+          "text": "*hide behind the shelf*",
+          "nextLineId": "line2"
+        },
+        {
+          "speaker": "",
+          "text": "*try to wake up from this nightmare*",
+          "nextLineId": "line2"
+        }
+      ]
+    },
+    {
+      "id": "line2",
+      "text": "Not yourn doing?… Not yourn fault?… With yourn stanched mommy gone the filth is yooourn to clean, little child."
+    },
+    {
+      "text": "I command thee… cleeeean the house. Clean and We bring no harmmm."
+    },
+    {
+      "choices": [
+        {
+          "speaker": "",
+          "text": "*nod cautiously*",
+          "nextLineId": "line3"
+        },
+        {
+          "speaker": "",
+          "text": "*nod desperately*",
+          "nextLineId": "line3"
+        }
+      ]
+    },
+    {
+      "speaker": "Perchten",
+      "id": "line3",
+      "text": "Trice my sisters come here to seeee your work. Clean gooood, little child. Prove that apple fell further from this filthy tree."
+    }
+  ]
+}

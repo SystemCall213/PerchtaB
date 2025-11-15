@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Search;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -43,7 +41,11 @@ public class Player : MonoBehaviour
 
     public void TakeDamage()
     {
-        hPBar.TakeDmg(1);
+        int currentHp = hPBar.TakeDmg(1);
+        if (currentHp == 0)
+        {
+            DeathScreen.Instance.Death();
+        }
     }
 
     public void Heal(int healAmount)
