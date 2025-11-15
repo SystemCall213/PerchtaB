@@ -12,7 +12,28 @@ public class HPBar : MonoBehaviour
     private void Start()
     {
         hPPoints = new List<HPPoint>();
-        for (int i = 0; i < numOfHp; i++)
+        Populate(numOfHp);
+    }
+
+    public void TakeDmg(int numOfDmg)
+    {
+        for (int i = 0; i < numOfDmg; i++)
+        {
+            HPPoint hPPoint = hPPoints.Last();
+            hPPoints.RemoveAt(hPPoints.Count - 1);
+
+            hPPoint.Kill();
+        }
+    }
+
+    public void Heal(int healAmount)
+    {
+        Populate(healAmount);
+    }
+    
+    public void Populate(int hpNum)
+    {
+        for (int i = 0; i < hpNum; i++)
         {
             HPPoint hPPoint = Instantiate(
                 hPPointPrefab,
@@ -24,17 +45,6 @@ public class HPBar : MonoBehaviour
             hPPoint.transform.localPosition = Vector3.zero;
 
             hPPoints.Add(hPPoint);
-        }
-    }
-    
-    public void takeDmg(int numOfDmg)
-    {
-        for (int i = 0; i < numOfDmg; i++)
-        {
-            HPPoint hPPoint = hPPoints.Last();
-            hPPoints.RemoveAt(hPPoints.Count - 1);
-
-            hPPoint.Kill();
         }
     }
 }

@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoundManager : MonoBehaviour
 {
@@ -11,8 +13,33 @@ public class RoundManager : MonoBehaviour
     public float animationDuration = 2f;
     private bool isExpanded = false;
 
+    public static RoundManager Instance;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
+    public void ToggleButtons()
+    {
+        Button[] btns = buttons.GetComponentsInChildren<Button>();
+
+        foreach (Button button in btns)
+        {
+            bool isInteractable = button.interactable;
+            button.interactable = !isInteractable;
+        }
+    }
+
     public void Toggle()
     {
+        BattleText.Instance.SetText("");
         battleField.TogglePanel();
         StartCoroutine(moveEnemy());
         StartCoroutine(moveButtons());
@@ -117,13 +144,13 @@ public class RoundManager : MonoBehaviour
 
         if (isExpanded)
         {
-            buttons.offsetMin = new Vector2(start.x, start.y - 600f);
-            buttons.offsetMax = new Vector2(start.z, start.w - 600f);
+            buttons.offsetMin = new Vector2(start.x, start.y - 300f);
+            buttons.offsetMax = new Vector2(start.z, start.w - 300f);
         }
         else
         {
-            buttons.offsetMin = new Vector2(start.x, start.y + 600f);
-            buttons.offsetMax = new Vector2(start.z, start.w + 600f);   
+            buttons.offsetMin = new Vector2(start.x, start.y + 300f);
+            buttons.offsetMax = new Vector2(start.z, start.w + 300f);
         }
     }
 

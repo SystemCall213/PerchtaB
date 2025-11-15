@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public static Enemy Instance;
     public List<AttackPattern> patterns;
     private RectTransform position;
+    public HPBar hPBar;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     void Start()
     {
@@ -30,5 +43,10 @@ public class Enemy : MonoBehaviour
     public RectTransform GetRectTransform()
     {
         return position;
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        hPBar.TakeDmg(dmg);
     }
 }
