@@ -53,7 +53,8 @@ public class Rock : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            print("Піймав");
+            Player player = collision.GetComponent<Player>();
+            player.TakeDamage();
         }
     }
 }

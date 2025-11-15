@@ -7,6 +7,9 @@ public class AttackPattern : MonoBehaviour
     private List<Attack> attacks = new List<Attack>();
     public float timeBetweenAttacks = 3f;
 
+    public RoundManager roundManager;
+    public float timeBuffer = 5f;
+
     void Start()
     {
         attacks = new List<Attack>(GetComponentsInChildren<Attack>());
@@ -24,5 +27,8 @@ public class AttackPattern : MonoBehaviour
             attack.Execute();
             yield return new WaitForSeconds(timeBetweenAttacks);
         }
+
+        yield return new WaitForSeconds(timeBuffer);
+        roundManager.Toggle();
     }
 }

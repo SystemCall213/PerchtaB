@@ -46,7 +46,9 @@ public class Splinter : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            print("Піймав");
+            Player player = collision.GetComponent<Player>();
+            player.TakeDamage();
+            Despawn();
         }
     }
 }

@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
     private PlayerMovement movement;
     private Transform position;
 
+    public HPBar hPBar;
+
     private void Start()
     {
         movement = GetComponent<PlayerMovement>();
@@ -15,9 +17,14 @@ public class Player : MonoBehaviour
     {
         return position;
     }
-    
+
     public PlayerMovement GetPlayerMovement()
     {
         return movement;
+    }
+    
+    public void TakeDamage()
+    {
+        hPBar.takeDmg(1);
     }
 }

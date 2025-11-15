@@ -17,7 +17,7 @@ public class HandArea : AttackArea
     {
         yield return new WaitForSeconds(2f);
 
-        Hand newHand = Instantiate(handPrefab, start.position, Quaternion.identity);
+        Hand newHand = Instantiate(handPrefab, start.position, Quaternion.Euler(0f, 0f, 180f));
         newHand.SetPlayer(player.GetTransform());
     }
 }
