@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AfterFirstBattle.unity
     guid: e0a1518e6a327ad469bd7cde0c83b63d
+  - enabled: 1
+    path: Assets/Scenes/SecondRoom.unity
+    guid: dcc1f50e849b11d408bedaf453f9a260
+  - enabled: 1
+    path: Assets/Scenes/SecondBattle.unity
+    guid: 8954aae2d6d051744b89e608b8003185
   m_configObjects: {}

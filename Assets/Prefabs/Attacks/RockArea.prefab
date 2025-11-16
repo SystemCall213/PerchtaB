@@ -28,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
   m_LocalPosition: {x: 5.04, y: 1.86, z: -90}
-  m_LocalScale: {x: 2.4610298, y: 1.8829095, z: 9.166881}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.67, y: 1.2777004, z: 6.220441}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 456809908670990654}
   - {fileID: 1849318951246437563}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {fileID: 456809908670990654}
   end: {fileID: 1849318951246437563}
-  rockPrefab: {fileID: 0}
+  rockPrefab: {fileID: -3215924528136006842, guid: 1e086730d3f92e141adc3f5b9931cc25, type: 3}
 --- !u!1 &5635685017945143689
 GameObject:
   m_ObjectHideFlags: 0

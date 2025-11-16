@@ -16,7 +16,8 @@ public class SplinterArea : AttackArea
 
     public override void Activate()
     {
-        spriteRenderer.enabled = true;
+        // Deprecated
+        // spriteRenderer.enabled = true;
         StartCoroutine(Execute());
     }
 
@@ -24,7 +25,8 @@ public class SplinterArea : AttackArea
     {
         yield return new WaitForSeconds(2f);
 
-        spriteRenderer.enabled = false;
+        // Deprecated
+        // spriteRenderer.enabled = false;
 
         Splinter newSplinter = Instantiate(splinterPrefab, start.position, Quaternion.identity);
         newSplinter.Move(end);

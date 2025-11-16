@@ -4,6 +4,8 @@ using UnityEngine;
 public class ConsecutiveAttack : Attack
 {
     public float delayBetweenExecutingAreas;
+    public float numOfRounds;
+    public float delayBetweenRounds;
 
     public override void Execute()
     {
@@ -12,10 +14,14 @@ public class ConsecutiveAttack : Attack
 
     private IEnumerator ExecuteAreasWithDelay()
     {
-        foreach (AttackArea area in attackAreas)
+        for (int i = 0; i < numOfRounds; i++)
         {
-            yield return new WaitForSeconds(delayBetweenExecutingAreas);
-            area.Activate();
+            foreach (AttackArea area in attackAreas)
+            {
+                yield return new WaitForSeconds(delayBetweenExecutingAreas);
+                area.Activate();
+            }   
+            yield return new WaitForSeconds(delayBetweenRounds);
         }
     }
 }

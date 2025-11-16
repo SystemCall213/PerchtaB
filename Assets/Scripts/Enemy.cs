@@ -23,8 +23,11 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         position = GetComponent<RectTransform>();
-        if (PlayerFlags.Instance.HasFlag("has_schnapps")) hPBar.TakeDmg(3);
-        PlayerFlags.Instance.RemoveFlag("has_schnapps");
+        if (PlayerFlags.Instance.HasFlag("battle_easier"))
+        {
+            hPBar.TakeDmg(3);
+            PlayerFlags.Instance.RemoveFlag("battle_easier");
+        }
     }
 
     public void Execute()

@@ -11,17 +11,11 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private float textSpeed;
     [SerializeField] private ChoiceContainer choiceContainer;
     [SerializeField] private TextAsset jsonFile;
-    [SerializeField] private Button buttonToActivate;
 
     private List<DialogueLine> lines;
     private Dictionary<string, int> lineMap;
     private int index;
     private bool waitingForChoice = false;
-
-    private void Start()
-    {
-        if (buttonToActivate != null) buttonToActivate.gameObject.SetActive(false);
-    }
 
     public void StartDialogue()
     {
@@ -117,7 +111,7 @@ public class Dialogue : MonoBehaviour
             if (index >= lines.Count)
             {
                 gameObject.SetActive(false);
-                if (buttonToActivate != null) buttonToActivate.gameObject.SetActive(true);
+                if (StickerShow.Instance != null) StickerShow.Instance.SetTransitionActive(true);
                 return;
             }
         }
