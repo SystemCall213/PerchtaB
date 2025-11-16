@@ -16,17 +16,12 @@ public class Dialogue : MonoBehaviour
     private int index;
     private bool waitingForChoice = false;
 
-    private void Awake()
+    public void StartDialogue()
     {
         textComponent.text = string.Empty;
         speakerComponent.text = string.Empty;
 
         LoadDialogueFromFile();
-        StartDialogue();
-    }
-
-    void StartDialogue()
-    {
         index = 0;
         StartCoroutine(TypeLine());
     }
@@ -126,7 +121,7 @@ public class Dialogue : MonoBehaviour
     public void OnChoiceSelected(string nextLineId)
     {
         choiceContainer.KillChildren();
-        
+
         if (lineMap.TryGetValue(nextLineId, out int nextIndex))
         {
             index = nextIndex;

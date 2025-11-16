@@ -6,6 +6,7 @@ public class MainMenuOprionsButton : MonoBehaviour
 
     public void ViewOptions()
     {
+        GetComponent<ButtonClick>().Play();
         optionsCanvas.enabled = true;
     }
 }
