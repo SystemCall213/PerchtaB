@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
     {
         int index = Random.Range(0, patterns.Count);
         AttackPattern pattern = patterns[index];
+        BattleText.Instance.SetText(pattern.battleText);
 
         StartCoroutine(startAttack(pattern));
     }
