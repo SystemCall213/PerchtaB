@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  sceneToTransitionTo: SecondBattle
+  sceneToTransitionTo: ThirdBattle
 --- !u!114 &2027344289
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private float textSpeed;
     [SerializeField] private ChoiceContainer choiceContainer;
     [SerializeField] private TextAsset jsonFile;
+    [SerializeField] private Image girl;
+    [SerializeField] private Image perchta;
 
     private List<DialogueLine> lines;
     private Dictionary<string, int> lineMap;
@@ -21,6 +23,8 @@ public class Dialogue : MonoBehaviour
     {
         textComponent.text = string.Empty;
         speakerComponent.text = string.Empty;
+        girl.enabled = true;
+        perchta.enabled = true;
 
         LoadDialogueFromFile();
         index = 0;
@@ -111,6 +115,8 @@ public class Dialogue : MonoBehaviour
             if (index >= lines.Count)
             {
                 gameObject.SetActive(false);
+                girl.enabled = false;
+                perchta.enabled = false;
                 if (StickerShow.Instance != null) StickerShow.Instance.SetTransitionActive(true);
                 return;
             }

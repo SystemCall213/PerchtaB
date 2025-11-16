@@ -38,8 +38,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -325}
-  m_SizeDelta: {x: -200.00003, y: -750}
+  m_AnchoredPosition: {x: -20, y: -325}
+  m_SizeDelta: {x: -480, y: -750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7451656809389963527
 CanvasRenderer:
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -96,6 +96,8 @@ MonoBehaviour:
   textSpeed: 0.01
   choiceContainer: {fileID: 6486877117921617535}
   jsonFile: {fileID: 4900000, guid: 1473760ff12d7a64c8bff0d4022dd0e1, type: 3}
+  girl: {fileID: 0}
+  perchta: {fileID: 0}
 --- !u!1 &5198445362715884181
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -40}
+  m_AnchoredPosition: {x: 176, y: -40}
   m_SizeDelta: {x: 1400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2183562062444553006
@@ -226,7 +228,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 349.51556, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -244,6 +246,7 @@ GameObject:
   - component: {fileID: 4171998607555825701}
   - component: {fileID: 2391959194825136047}
   - component: {fileID: 8822085982626722853}
+  - component: {fileID: 972341290441713319}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -334,6 +337,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &972341290441713319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5281635234539019597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d7c8282f3fd5046b50a28dd4acc3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 5703011593179899190}
+  startDialogueDelay: 3
 --- !u!1 &6525921209304821036
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -649, y: 51}
+  m_AnchoredPosition: {x: -455, y: 51}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4151852812975290803
