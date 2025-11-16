@@ -5369,12 +5369,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -5947,6 +5947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec914ff90775b4d428e78c1da69ef719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleSceneName: SecondBattle
 --- !u!114 &1296892354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8004,7 +8005,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -8372,7 +8373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4801674879338460664, guid: 2c5f74db991ba4c4d818e6ef36954bf0, type: 3}
       propertyPath: maxHp
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4801674879338460664, guid: 2c5f74db991ba4c4d818e6ef36954bf0, type: 3}
       propertyPath: numOfHp
@@ -9904,18 +9905,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206694935}
     - target: {fileID: 1461522035708755031, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461522035708755031, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461522035708755031, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461522035708755031, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -9954,34 +9943,6 @@ PrefabInstance:
     - target: {fileID: 1461522035708755031, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461522035708755031, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159120408619985008, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 02171a079979a484a97d108ef7e25d7a, type: 3}
-    - target: {fileID: 5159120408619985008, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159120408619985008, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159120408619985008, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7766209393386471434, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7766209393386471434, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

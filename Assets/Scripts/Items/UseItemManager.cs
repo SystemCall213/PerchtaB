@@ -12,16 +12,23 @@ public class UseItemManager : MonoBehaviour
 
     public void UseItems()
     {
-        RoundManager.Instance.ToggleButtons();
-
-        text.Disable();
-        List<Item> items = Player.Instance.GetItems();
-
-        foreach (Item item in items)
+        if (Player.Instance.GetItems().Count > 0)
         {
-            ItemButton button = Instantiate(itemButtonPrefab, itemsHolder.transform);
+            RoundManager.Instance.ToggleButtons();
 
-            button.SetItem(item, OnItemUsed);
+            text.Disable();
+            List<Item> items = Player.Instance.GetItems();
+
+            foreach (Item item in items)
+            {
+                ItemButton button = Instantiate(itemButtonPrefab, itemsHolder.transform);
+
+                button.SetItem(item, OnItemUsed);
+            }   
+        }
+        else
+        {
+            BattleText.Instance.SetText("You don't have any items!");
         }
     }
 

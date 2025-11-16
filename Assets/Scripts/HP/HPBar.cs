@@ -16,12 +16,15 @@ public class HPBar : MonoBehaviour
 
     public int TakeDmg(int numOfDmg)
     {
-        for (int i = 0; i < numOfDmg; i++)
+        if (CurrentHp() > 0)
         {
-            HPPoint hPPoint = hPPoints.Last();
-            hPPoints.RemoveAt(hPPoints.Count - 1);
+            for (int i = 0; i < numOfDmg; i++)
+            {
+                HPPoint hPPoint = hPPoints.Last();
+                hPPoints.RemoveAt(hPPoints.Count - 1);
 
-            hPPoint.Kill();
+                hPPoint.Kill();
+            }    
         }
         return hPPoints.Count;
     }

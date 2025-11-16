@@ -4,12 +4,18 @@ using UnityEngine;
 public class RestButton : MonoBehaviour
 {
     public int healAmount = 5;
+    private bool restUsed = false;
 
     public void Rest()
     {
-        Player.Instance.Heal(healAmount);
-        RoundManager.Instance.ToggleButtons();
-        StartCoroutine(StartRound());
+        if (!restUsed)
+        {
+            Player.Instance.Heal(healAmount);
+            RoundManager.Instance.ToggleButtons();
+            BattleText.Instance.SetText("You healed 5 hp!");
+            StartCoroutine(StartRound());
+            restUsed = true;
+        }
     }
 
     private IEnumerator StartRound()

@@ -8,6 +8,7 @@ public class AttackPattern : MonoBehaviour
     public float timeBetweenAttacks = 3f;
 
     public float timeBuffer = 5f;
+    public string battleText = "";
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class AttackPattern : MonoBehaviour
     
     private IEnumerator PerformAttack()
     {
+        BattleText.Instance.SetText(battleText);
         foreach (Attack attack in attacks)
         {
             attack.Execute();

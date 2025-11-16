@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -58,6 +59,8 @@ public class Enemy : MonoBehaviour
             if (currentHp == 0)
             {
                 StopAllCoroutines();
+
+                GetComponent<Image>().enabled = false;
 
                 int playerHp = Player.Instance.hPBar.CurrentHp();
                 int playerMaxHp = Player.Instance.hPBar.MaxHp();

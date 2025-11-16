@@ -41,6 +41,14 @@ public class RoundManager : MonoBehaviour
     {
         if (Enemy.Instance.hPBar.CurrentHp() != 0)
         {
+            if (isExpanded)
+            {
+                Player.Instance.GetComponent<SpriteRenderer>().enabled = false;
+            }
+            else
+            {
+                Player.Instance.GetComponent<SpriteRenderer>().enabled = true;
+            }
             BattleText.Instance.SetText("");
             battleField.TogglePanel();
             StartCoroutine(moveEnemy());
