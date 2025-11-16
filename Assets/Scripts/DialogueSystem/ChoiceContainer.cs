@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +8,8 @@ public class ChoiceContainer : MonoBehaviour
     public void ShowChoices(List<Choice> choices, Dialogue dialogue)
     {
         // Remove old buttons
-        foreach (Transform child in transform)
-        {
-            Destroy(child.gameObject);
-        }
-
+        KillChildren();
+        
         foreach (var choice in choices)
         {
             ChoiceButton button = Instantiate(choicePrefab, transform);
@@ -26,5 +22,13 @@ public class ChoiceContainer : MonoBehaviour
     public void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    public void KillChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

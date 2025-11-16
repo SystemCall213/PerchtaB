@@ -125,6 +125,8 @@ public class Dialogue : MonoBehaviour
 
     public void OnChoiceSelected(string nextLineId)
     {
+        choiceContainer.KillChildren();
+        
         if (lineMap.TryGetValue(nextLineId, out int nextIndex))
         {
             index = nextIndex;
