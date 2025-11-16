@@ -12,7 +12,7 @@ public class AttackFill : MonoBehaviour
 
     [Header("Fill Settings")]
     public float fill = 0f;          // 0 = empty, 100 = full
-    public float increaseAmount = 2f; 
+    public float increaseAmount = 4f;
     public float decreaseAmount = 1f;
     public float decreaseInterval = 0.1f;
 
