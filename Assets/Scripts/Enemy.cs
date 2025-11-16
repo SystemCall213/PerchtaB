@@ -47,6 +47,32 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        hPBar.TakeDmg(dmg);
+        for (int i = 0; i < dmg; i++)
+        {
+            int currentHp = hPBar.TakeDmg(1);
+            if (currentHp == 0)
+            {
+                StopAllCoroutines();
+
+                int playerHp = Player.Instance.hPBar.CurrentHp();
+                int playerMaxHp = Player.Instance.hPBar.MaxHp();
+
+                bool shnapps_found = ((float) playerHp / playerMaxHp) > 0.25f;
+
+                if (shnapps_found)
+                {
+                    PlayerFlags.Instance.SetFlag("has_schnapps");
+                }
+                
+                string shnapps_text = shnapps_found ? "and found Shnapps" : "";
+
+                BattleText.Instance.SetText($"You have defeated the enemy {shnapps_text}");
+
+                RoundManager.Instance.GetButtons().gameObject.SetActive(false);
+                ButtonTransitionScene.Instance.gameObject.SetActive(true);
+
+                break;
+            }
+        }
     }
 }

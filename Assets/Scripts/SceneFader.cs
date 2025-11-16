@@ -33,6 +33,7 @@ public class SceneFader : MonoBehaviour
 
     public void FadeToScene(string sceneName)
     {
+        StopAllCoroutines();
         StartCoroutine(FadeOutAndLoad(sceneName));
     }
 

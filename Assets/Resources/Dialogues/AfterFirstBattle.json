@@ -1,0 +1,38 @@
+{
+  "lines": [
+    {
+      "speaker": "Perchta",
+      "text": "Me smells bloooood. Lots of it! But me sees none. Me heards broooken c-c-clay. But spot no pieces."
+    },
+    {
+      "speaker": "Perchta",
+      "text": "Fine. Fine, fine work you have done. Little cub."
+    },
+    {
+      "choices": [
+        {
+          "speaker": "You",
+          "text": "*stay still while Perchta looks around*",
+          "nextLineId": "line4"
+        },
+        {
+          "speaker": "You",
+          "text": "*offer schnapps to Perchta*",
+          "nextLineId": "lineSchnapps1",
+          "requiredFlag": "has_schnapps",
+          "setFlag": "battle_easier"
+        }
+      ]
+    },
+    {
+      "speaker": "Perchta",
+      "id": "line4",
+      "text": "You’ve been obeeeedient, little cub.. what a good c-c-cleaner you will becometh… Now go. C-c-clean thy livingth room."
+    },
+    {
+      "speaker": "Perchta",
+      "id": "lineSchnapps1",
+      "text": "Me accepts such a gift, little c-c-cub, Me shall enjoyth it with me sisters much… Now go. C-c-clean thy livingth room."
+    }
+  ]
+}

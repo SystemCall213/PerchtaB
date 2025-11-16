@@ -39,13 +39,16 @@ public class RoundManager : MonoBehaviour
 
     public void Toggle()
     {
-        BattleText.Instance.SetText("");
-        battleField.TogglePanel();
-        StartCoroutine(moveEnemy());
-        StartCoroutine(moveButtons());
-        StartCoroutine(moveHpBars());
-        if (!isExpanded) enemy.Execute();
-        isExpanded = !isExpanded;
+        if (Enemy.Instance.hPBar.CurrentHp() != 0)
+        {
+            BattleText.Instance.SetText("");
+            battleField.TogglePanel();
+            StartCoroutine(moveEnemy());
+            StartCoroutine(moveButtons());
+            StartCoroutine(moveHpBars());
+            if (!isExpanded) enemy.Execute();
+            isExpanded = !isExpanded;   
+        }
     }
 
     private IEnumerator moveEnemy()
@@ -246,5 +249,10 @@ public class RoundManager : MonoBehaviour
             garbageHp.offsetMin = new Vector2(garbageStart.x + 250f, garbageStart.y);
             garbageHp.offsetMax = new Vector2(garbageStart.z + 250f, garbageStart.w);   
         }
+    }
+
+    public RectTransform GetButtons()
+    {
+        return buttons;
     }
 }

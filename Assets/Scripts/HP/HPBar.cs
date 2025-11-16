@@ -5,14 +5,13 @@ using UnityEngine;
 public class HPBar : MonoBehaviour
 {
     public HPPoint hPPointPrefab;
-    public int numOfHp;
-
+    public int maxHp;
     private List<HPPoint> hPPoints;
 
     private void Start()
     {
         hPPoints = new List<HPPoint>();
-        Populate(numOfHp);
+        Populate(maxHp);
     }
 
     public int TakeDmg(int numOfDmg)
@@ -36,16 +35,29 @@ public class HPBar : MonoBehaviour
     {
         for (int i = 0; i < hpNum; i++)
         {
-            HPPoint hPPoint = Instantiate(
-                hPPointPrefab,
-                transform.position,
-                Quaternion.identity,
-                transform
-            );
+            if (hPPoints.Count < maxHp)
+            {
+                HPPoint hPPoint = Instantiate(
+                    hPPointPrefab,
+                    transform.position,
+                    Quaternion.identity,
+                    transform
+                );
 
-            hPPoint.transform.localPosition = Vector3.zero;
+                hPPoint.transform.localPosition = Vector3.zero;
 
-            hPPoints.Add(hPPoint);
+                hPPoints.Add(hPPoint);   
+            }
         }
+    }
+
+    public int CurrentHp()
+    {
+        return hPPoints.Count;
+    }
+
+    public int MaxHp()
+    {
+        return maxHp;
     }
 }

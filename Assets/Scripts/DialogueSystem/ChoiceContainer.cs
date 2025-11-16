@@ -10,10 +10,19 @@ public class ChoiceContainer : MonoBehaviour
         // Remove old buttons
         KillChildren();
         
+
         foreach (var choice in choices)
         {
+            bool allowed = string.IsNullOrEmpty(choice.requiredFlag)
+                            || PlayerFlags.Instance.HasFlag(choice.requiredFlag);
+
             ChoiceButton button = Instantiate(choicePrefab, transform);
             button.Setup(choice, dialogue);
+
+            if (!allowed)
+            {
+                button.DisableButtonInteraction();
+            }
         }
 
         gameObject.SetActive(true);

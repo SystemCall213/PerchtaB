@@ -20,8 +20,15 @@ public class ChoiceButton : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(OnClick);
     }
 
+    public void DisableButtonInteraction()
+    {
+        GetComponent<Button>().interactable = false;
+    }
+
     private void OnClick()
     {
         dialogue.OnChoiceSelected(myChoice.nextLineId);
+        PlayerFlags.Instance.RemoveFlag(myChoice.requiredFlag);
+        PlayerFlags.Instance.SetFlag(myChoice.setFlag);
     }
 }
