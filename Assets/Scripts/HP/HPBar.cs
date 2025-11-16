@@ -8,7 +8,7 @@ public class HPBar : MonoBehaviour
     public int maxHp;
     private List<HPPoint> hPPoints;
 
-    private void Start()
+    private void Awake()
     {
         hPPoints = new List<HPPoint>();
         Populate(maxHp);

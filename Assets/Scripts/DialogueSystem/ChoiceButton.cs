@@ -28,7 +28,7 @@ public class ChoiceButton : MonoBehaviour
     private void OnClick()
     {
         dialogue.OnChoiceSelected(myChoice.nextLineId);
-        PlayerFlags.Instance.RemoveFlag(myChoice.requiredFlag);
-        PlayerFlags.Instance.SetFlag(myChoice.setFlag);
+        if (myChoice.setFlag != null) PlayerFlags.Instance.SetFlag(myChoice.setFlag);
+        if (myChoice.requiredFlag != null) PlayerFlags.Instance.RemoveFlag(myChoice.requiredFlag);
     }
 }

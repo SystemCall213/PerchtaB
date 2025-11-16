@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -10,11 +11,17 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private float textSpeed;
     [SerializeField] private ChoiceContainer choiceContainer;
     [SerializeField] private TextAsset jsonFile;
+    [SerializeField] private Button buttonToActivate;
 
     private List<DialogueLine> lines;
     private Dictionary<string, int> lineMap;
     private int index;
     private bool waitingForChoice = false;
+
+    private void Start()
+    {
+        if (buttonToActivate != null) buttonToActivate.gameObject.SetActive(false);
+    }
 
     public void StartDialogue()
     {
@@ -110,6 +117,7 @@ public class Dialogue : MonoBehaviour
             if (index >= lines.Count)
             {
                 gameObject.SetActive(false);
+                if (buttonToActivate != null) buttonToActivate.gameObject.SetActive(true);
                 return;
             }
         }
