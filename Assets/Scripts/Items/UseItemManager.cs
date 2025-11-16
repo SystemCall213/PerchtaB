@@ -37,13 +37,13 @@ public class UseItemManager : MonoBehaviour
         text.Enable();
         text.SetText($"Used: {item.itemName}");
 
-        item.ApplyEffect();
-
         Player.Instance.GetItems().Remove(item);
         foreach (Transform child in itemsHolder.transform)
         {
             Destroy(child.gameObject);
         }
+
+        item.ApplyEffect();
 
         StartCoroutine(StartRound());
     }
