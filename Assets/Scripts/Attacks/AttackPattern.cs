@@ -30,6 +30,5 @@ public class AttackPattern : MonoBehaviour
 
         yield return new WaitForSeconds(timeBuffer);
         RoundManager.Instance.Toggle();
-        RoundManager.Instance.ToggleButtons();
     }
 }

@@ -44,6 +44,7 @@ public class RoundManager : MonoBehaviour
             if (isExpanded)
             {
                 Player.Instance.GetComponent<SpriteRenderer>().enabled = false;
+                ToggleButtons();
             }
             else
             {

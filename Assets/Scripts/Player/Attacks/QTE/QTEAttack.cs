@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class QTEAttack : MonoBehaviour
+public class QTEAttack : PlayerAttack
 {
     [SerializeField] QTEOverlapLayoutGroup qteSymbolsHolder;
     [SerializeField] QTESymbol symbolPrefab;
@@ -13,26 +13,52 @@ public class QTEAttack : MonoBehaviour
     private readonly char[] possibleKeys = new char[] { 'W', 'A', 'S', 'D' };
     private readonly List<QTESymbol> symbols = new List<QTESymbol>();
 
-    public void StartAttack()
+    private int numOfSymbolsTotal = 0;
+    private int correctPressedSymbols = 0;
+
+    public override void StartAttack()
     {
         if (isAttacking) return;
+        numOfSymbolsTotal = 0;
+
+        RoundManager.Instance.ToggleButtons();
 
         isAttacking = true;
         qteSymbolsHolder.gameObject.SetActive(true);
+        circleTimer.StartTimer(10f);
+        correctPressedSymbols = 0;
 
         StartCoroutine(AttackRoutine());
     }
 
+    public override void FinishAttack()
+    {
+        foreach (var s in symbols)
+            Destroy(s.gameObject);
+        symbols.Clear();
+        
+        int dmg = correctPressedSymbols / 5;
+
+        Enemy.Instance.TakeDamage(dmg);
+
+        StartCoroutine(StartEnemyAttack());
+    }
+
+    private IEnumerator StartEnemyAttack()
+    {
+        yield return new WaitForSeconds(2f);
+
+        RoundManager.Instance.Toggle();
+    }
+
     private IEnumerator AttackRoutine()
     {
-        // Wait until isAttacking is true (your requirement)
         while (!isAttacking)
             yield return null;
 
         SpawnSymbols();
         HighlightFirst();
 
-        // Input loop
         while (isAttacking)
         {
             if (symbols.Count == 0)
@@ -42,6 +68,12 @@ public class QTEAttack : MonoBehaviour
             }
 
             char expected = symbols[0].Key;
+
+            if (AnyWASDKeyPressed() && !CheckKeyPressed(expected))
+            {
+                // Wrong input -> outline red
+                symbols[0].SetOutlineRed();
+            }
 
             if (CheckKeyPressed(expected))
             {
@@ -54,34 +86,24 @@ public class QTEAttack : MonoBehaviour
 
     private void SpawnSymbols()
     {
-        // Clear old ones
         foreach (var s in symbols)
             Destroy(s.gameObject);
         symbols.Clear();
 
-        // Spawn 8 new
         for (int i = 0; i < 8; i++)
         {
-            QTESymbol newSym = Instantiate(symbolPrefab, qteSymbolsHolder.transform);
-
-            // Random WASD
-            char key = possibleKeys[Random.Range(0, possibleKeys.Length)];
-            newSym.Key = key;
-            newSym.GetComponentInChildren<TextMeshProUGUI>().text = key.ToString();
-
-            symbols.Add(newSym);
+            AddNewSymbol();
         }
     }
 
-    // Scales first symbol ×1.5 and resets others to normal
     private void HighlightFirst()
     {
         for (int i = 0; i < symbols.Count; i++)
         {
             if (i == 0)
-                symbols[i].transform.localScale = Vector3.one * 3.75f;
+                symbols[i].transform.localScale = Vector3.one * 2.75f;
             else
-                symbols[i].transform.localScale = Vector3.one * 3f;
+                symbols[i].transform.localScale = Vector3.one * 2f;
         }
     }
 
@@ -100,9 +122,12 @@ public class QTEAttack : MonoBehaviour
     private void HandleCorrectKey()
     {
         QTESymbol first = symbols[0];
-
+        first.SetOutlineGreen();
+        correctPressedSymbols++;
         // Animate the hit symbol (up + left, then destroy)
         Vector3 targetPos = first.transform.localPosition + new Vector3(-50f, 60f, 0f);
+        // Remove from list
+        symbols.RemoveAt(0);
 
         LeanTween.moveLocal(first.gameObject, targetPos, 0.25f).setEaseOutQuad();
         LeanTween.scale(first.gameObject, Vector3.zero, 0.25f).setEaseInBack()
@@ -111,8 +136,7 @@ public class QTEAttack : MonoBehaviour
                 Destroy(first.gameObject);
             });
 
-        // Remove from list
-        symbols.RemoveAt(0);
+            
 
         // Shift remaining left (tween)
         for (int i = 0; i < symbols.Count; i++)
@@ -125,6 +149,7 @@ public class QTEAttack : MonoBehaviour
         }
 
         // New first symbol should be enlarged
+        AddNewSymbol();
         HighlightFirst();
     }
 
@@ -132,5 +157,28 @@ public class QTEAttack : MonoBehaviour
     {
         isAttacking = false;
         qteSymbolsHolder.gameObject.SetActive(false);
+    }
+
+    private void AddNewSymbol()
+    {
+        QTESymbol newSym = Instantiate(symbolPrefab, qteSymbolsHolder.transform);
+
+        // Random WASD
+        char key = possibleKeys[Random.Range(0, possibleKeys.Length)];
+        newSym.Key = key;
+        newSym.GetComponentInChildren<TextMeshProUGUI>().text = key.ToString();
+        Canvas canvas = newSym.GetComponent<Canvas>();
+        canvas.sortingOrder = 1000 - numOfSymbolsTotal;
+        numOfSymbolsTotal++;
+
+        symbols.Add(newSym);
+    }
+
+    private bool AnyWASDKeyPressed()
+    {
+        return Input.GetKeyDown(KeyCode.W) ||
+            Input.GetKeyDown(KeyCode.A) ||
+            Input.GetKeyDown(KeyCode.S) ||
+            Input.GetKeyDown(KeyCode.D);
     }
 }

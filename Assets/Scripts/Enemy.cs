@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public List<AttackPattern> patterns;
     private RectTransform position;
     public HPBar hPBar;
+    public System.Action dead;
 
     private void Awake()
     {
@@ -60,6 +61,8 @@ public class Enemy : MonoBehaviour
             if (currentHp == 0)
             {
                 StopAllCoroutines();
+
+                dead.Invoke();
 
                 GetComponent<Image>().enabled = false;
 
