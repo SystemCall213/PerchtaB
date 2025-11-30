@@ -4994,17 +4994,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5319082076581915905, guid: d13f5c3870377204f841990bdf0fe7b1, type: 3}
   m_PrefabInstance: {fileID: 6885579324924941898}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1217620128 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2781346464811965291, guid: d13f5c3870377204f841990bdf0fe7b1, type: 3}
-  m_PrefabInstance: {fileID: 6885579324924941898}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90435a22263b97343a07854d5b6fcc87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1230815584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5678,6 +5667,17 @@ MonoBehaviour:
   animationDuration: 2
   collapsedOffsets: {x: 300, y: 300, z: 600, w: -300}
   expandedOffsets: {x: 550, y: 550, z: 250, w: -250}
+--- !u!114 &1442015684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2357063526241886304, guid: 57a57e0946eaac143bfbee2a13defc7e, type: 3}
+  m_PrefabInstance: {fileID: 3216930565330742944}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4556382f7922e489bb38b6247ba16d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1489025621
 GameObject:
   m_ObjectHideFlags: 0
@@ -9485,14 +9485,14 @@ PrefabInstance:
     - target: {fileID: 5495072348296541699, guid: 32bc24455f8c51e45ac00244db50347f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1217620128}
+      objectReference: {fileID: 1442015684}
     - target: {fileID: 5495072348296541699, guid: 32bc24455f8c51e45ac00244db50347f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartAttack
       objectReference: {fileID: 0}
     - target: {fileID: 5495072348296541699, guid: 32bc24455f8c51e45ac00244db50347f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: JITAttackHolder, Assembly-CSharp
+      value: QTEAttack, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7119200348087019562, guid: 32bc24455f8c51e45ac00244db50347f, type: 3}
       propertyPath: m_Pivot.x
