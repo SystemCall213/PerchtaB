@@ -710,22 +710,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2391959194825136047, guid: 3d36cd82bdc13d144be00d0be5a81406, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391959194825136047, guid: 3d36cd82bdc13d144be00d0be5a81406, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391959194825136047, guid: 3d36cd82bdc13d144be00d0be5a81406, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391959194825136047, guid: 3d36cd82bdc13d144be00d0be5a81406, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 4171998607555825701, guid: 3d36cd82bdc13d144be00d0be5a81406, type: 3}
       propertyPath: m_Camera
       value: 
@@ -813,10 +797,6 @@ PrefabInstance:
     - target: {fileID: 5281635234539019597, guid: 3d36cd82bdc13d144be00d0be5a81406, type: 3}
       propertyPath: m_Name
       value: DialogueCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5281635234539019597, guid: 3d36cd82bdc13d144be00d0be5a81406, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5703011593179899190, guid: 3d36cd82bdc13d144be00d0be5a81406, type: 3}
       propertyPath: girl
