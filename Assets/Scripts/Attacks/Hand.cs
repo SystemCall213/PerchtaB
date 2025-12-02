@@ -16,9 +16,10 @@ public class Hand : MonoBehaviour
     [Header("Settings")]
     public float turnDegreesPerStep = 30f;
     public float teleportDistance = 3f;
-    public float interval = 1f;
 
     private List<Arm> arms;
+    private List<Vector3> handPositions = new List<Vector3>(); 
+    private List<Quaternion> handRotations = new List<Quaternion>();
 
     private void Awake()
     {
@@ -28,6 +29,8 @@ public class Hand : MonoBehaviour
 
     private void Start()
     {
+        handPositions.Add(transform.position);
+        handRotations.Add(transform.rotation);
         StartCoroutine(FollowPlayer());
     }
 
@@ -55,7 +58,7 @@ public class Hand : MonoBehaviour
                 float delta = Mathf.DeltaAngle(currentZ, desiredZ);
 
                 // ✅ NEW: Limit rotation per step to ±45 degrees
-                delta = Mathf.Clamp(delta, -45f, 45f);
+                delta = Mathf.Clamp(delta, -75f, 75f);
 
                 // --- Step 2: Rotate gradually using transform.Rotate ---
                 float duration = 1f;
@@ -80,6 +83,8 @@ public class Hand : MonoBehaviour
                 // --- Step 3: Move after rotation ---
                 Vector3 endPos = startPos + transform.up * teleportDistance;
                 transform.position = endPos;
+                handPositions.Add(endPos);
+                handRotations.Add(transform.rotation);
 
                 Vector3 midPos = (startPos + endPos) * 0.5f;   // midpoint
                 Quaternion armRot = startRot;                  // same direction as the hand rotated
@@ -95,7 +100,31 @@ public class Hand : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenExtending);
         }
 
+        yield return StartCoroutine(ReturnBackwards());
+
         Kill();
+    }
+
+    private IEnumerator ReturnBackwards()
+    {
+        // Move from last stored position back to first
+        for (int i = handPositions.Count - 2; i >= 0; i--)    
+        {
+            // Teleport Hand to previous position and rotation
+            transform.position = handPositions[i];
+            transform.rotation = handRotations[i];
+
+            // Destroy the last Arm associated with this segment
+            if (arms.Count > 0)
+            {
+                Arm lastArm = arms[arms.Count - 1];
+                arms.RemoveAt(arms.Count - 1);
+                lastArm.Kill();
+            }
+
+            // Optional small delay to make return step visible
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -103,6 +132,8 @@ public class Hand : MonoBehaviour
         if (collision.tag == "Player")
         {
             Player player = collision.GetComponent<Player>();
+            player.TakeDamage();
+            player.TakeDamage();
             player.TakeDamage();
             Kill();
         }

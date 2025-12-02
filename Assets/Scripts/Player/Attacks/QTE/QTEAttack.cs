@@ -15,6 +15,7 @@ public class QTEAttack : PlayerAttack
 
     private int numOfSymbolsTotal = 0;
     private int correctPressedSymbols = 0;
+    public float wrongButtonTimePunishment = 0.3f;
 
     public override void StartAttack()
     {
@@ -27,6 +28,7 @@ public class QTEAttack : PlayerAttack
         qteSymbolsHolder.gameObject.SetActive(true);
         circleTimer.StartTimer(10f);
         correctPressedSymbols = 0;
+        qteSymbolsHolder.firstBatch = 4;
 
         StartCoroutine(AttackRoutine());
     }
@@ -37,7 +39,7 @@ public class QTEAttack : PlayerAttack
             Destroy(s.gameObject);
         symbols.Clear();
         
-        int dmg = correctPressedSymbols / 5;
+        int dmg = correctPressedSymbols / 4;
 
         Enemy.Instance.TakeDamage(dmg);
 
@@ -73,6 +75,14 @@ public class QTEAttack : PlayerAttack
             {
                 // Wrong input -> outline red
                 symbols[0].SetOutlineRed();
+                print("what");
+                circleTimer.timeLeft -= wrongButtonTimePunishment;
+                if (circleTimer.timeLeft < 0)
+                {
+                    circleTimer.timeLeft = 0;
+                    circleTimer.timerExpired.Invoke();
+                    circleTimer.timerImage.fillAmount = circleTimer.timeLeft / circleTimer.maxTime;
+                }
             }
 
             if (CheckKeyPressed(expected))
@@ -135,10 +145,12 @@ public class QTEAttack : PlayerAttack
             {
                 Destroy(first.gameObject);
             });
-
+        qteSymbolsHolder.firstBatch -= 1;
+        if (qteSymbolsHolder.firstBatch == 0) qteSymbolsHolder.firstBatch = 4;
             
 
         // Shift remaining left (tween)
+        /*
         for (int i = 0; i < symbols.Count; i++)
         {
             RectTransform rt = symbols[i].GetComponent<RectTransform>();
@@ -147,6 +159,7 @@ public class QTEAttack : PlayerAttack
 
             LeanTween.moveLocal(rt.gameObject, shifted, 0.2f).setEaseOutQuad();
         }
+        */
 
         // New first symbol should be enlarged
         AddNewSymbol();

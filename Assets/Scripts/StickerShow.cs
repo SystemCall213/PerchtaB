@@ -30,16 +30,22 @@ public class StickerShow : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Color c = sticker.color;
-        c.a = 1;
-        sticker.color = c;
+        if (isActive)
+        {
+            Color c = sticker.color;
+            c.a = 1;
+            sticker.color = c;   
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Color c = sticker.color;
-        c.a = 0;
-        sticker.color = c;
+        if (isActive)
+        {
+            Color c = sticker.color;
+            c.a = 0;
+            sticker.color = c;   
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)

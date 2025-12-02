@@ -13,7 +13,10 @@ public class Arm : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            print("Піймав");
+            Player player = collision.GetComponent<Player>();
+            player.TakeDamage();
+            player.TakeDamage();
+            player.TakeDamage();
             handRef.Kill();
         }
     }

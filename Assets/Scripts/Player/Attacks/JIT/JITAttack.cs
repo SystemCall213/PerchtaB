@@ -11,7 +11,7 @@ public class JITAttack : PlayerAttack
 
     [Header("Settings")]
     public KeyCode attackKey = KeyCode.Space;
-    public float baseSpeed = 400f;      // starting movement speed
+    public float baseSpeed = 800f;      // starting movement speed
     public float speedIncrease = 40f;   // added every successful hit
 
     private float currentSpeed;
@@ -22,7 +22,6 @@ public class JITAttack : PlayerAttack
 
     void OnEnable()
     {
-        circleTimer.timerExpired += FinishAttack;
         oneDmgHitZone.inTheZone += ZoneInteraction;
         twoDmgHitZone.inTheZone += ZoneInteraction;
     }
@@ -61,7 +60,7 @@ public class JITAttack : PlayerAttack
         {
             circleTimer.timeLeft = 0;
             attacking = false;
-            attackFinished.Invoke();   
+            attackFinished.Invoke();
         }
     }
 
@@ -93,7 +92,6 @@ public class JITAttack : PlayerAttack
     {
         if (currentDmg > 0)
         {
-            currentSpeed += speedIncrease;
             Enemy.Instance.TakeDamage(currentDmg);
             return;
         }

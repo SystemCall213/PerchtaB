@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CircleTimer : MonoBehaviour
 {
     [SerializeField] public float timeLeft = 0;
-    private float maxTime;
+    public float maxTime;
 
     public Image timerImage;
 
@@ -23,10 +23,10 @@ public class CircleTimer : MonoBehaviour
             timeLeft -= Time.deltaTime;
 
             // Clamp
-            if (timeLeft < 0)
+            if (timeLeft <= 0)
             {
                 timeLeft = 0;
-                timerExpired.Invoke();   
+                timerExpired.Invoke();
             }
 
             // Fill amount from 1 → 0 based on time ratio

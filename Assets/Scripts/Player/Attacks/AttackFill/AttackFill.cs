@@ -3,37 +3,24 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class AttackFill : MonoBehaviour
+public class AttackFill : PlayerAttack
 {
     public RectTransform fillImage;
     public GameObject attackImage;
-    public AttackTimer timer;
-    public Enemy enemy;
 
     [Header("Fill Settings")]
     public float fill = 0f;          // 0 = empty, 100 = full
-    public float increaseAmount = 4f;
+    public float increaseAmount = 8f;
     public float decreaseAmount = 1f;
     public float decreaseInterval = 0.1f;
 
     private float decreaseTimer = 0f;
     private bool attackImageActive = false;
 
-    void OnEnable()
-    {
-        timer.OnCountdownFinished += FinishAttack;
-    }
-
-    void OnDisable()
-    {
-        timer.OnCountdownFinished -= FinishAttack;
-    }
-
-    public void StartAttack()
+    public override void StartAttack()
     {
         RoundManager.Instance.ToggleButtons();
-        timer.enabled = true;
-        timer.StartAttack();
+        circleTimer.StartTimer(5f);
         attackImage.SetActive(true);
         attackImageActive = true;
         SetFill(0);
@@ -69,14 +56,14 @@ public class AttackFill : MonoBehaviour
         fillImage.localPosition = new Vector3(fillImage.localPosition.x, y, fillImage.localPosition.z);
     }
 
-    private void FinishAttack()
+    public override void FinishAttack()
     {
         attackImage.SetActive(false);
         attackImageActive = false;
 
         int dmg = (int)(fill / 20);
 
-        enemy.TakeDamage(dmg);
+        Enemy.Instance.TakeDamage(dmg);
 
         fill = 0;
 

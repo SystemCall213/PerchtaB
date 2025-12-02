@@ -4,7 +4,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] protected CircleTimer circleTimer;
 
-    private void OnEnable()
+    private void Start()
     {
         circleTimer.timerExpired += FinishAttack;
     }

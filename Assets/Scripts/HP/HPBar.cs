@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,6 +8,14 @@ public class HPBar : MonoBehaviour
     public HPPoint hPPointPrefab;
     public int maxHp;
     private List<HPPoint> hPPoints;
+
+    // Queue for sequential processing
+    private readonly Queue<HPPoint> damageQueue = new Queue<HPPoint>();
+    private bool isProcessingDamage = false;
+
+    // Animation parameters
+    [SerializeField] private float hpShrinkDuration = 0.25f;
+    [SerializeField] private float delayBetweenHp = 0.1f; // time between each HP animation
 
     private void Awake()
     {
@@ -20,14 +29,65 @@ public class HPBar : MonoBehaviour
         {
             for (int i = 0; i < numOfDmg; i++)
             {
-                HPPoint hPPoint = hPPoints.Last();
+                if (hPPoints.Count == 0) break;
+
+                // Remove from the HP list immediately so counts are correct
+                HPPoint hpPoint = hPPoints[hPPoints.Count - 1];
                 hPPoints.RemoveAt(hPPoints.Count - 1);
 
-                hPPoint.Kill();
-            }    
+                // Enqueue for sequential animation + destruction
+                damageQueue.Enqueue(hpPoint);
+            }
+
+            // Start processing queue if not already running
+            if (!isProcessingDamage)
+                StartCoroutine(ProcessDamageQueue());
         }
+
         return hPPoints.Count;
     }
+
+    private IEnumerator ProcessDamageQueue()
+    {
+        isProcessingDamage = true;
+
+        while (damageQueue.Count > 0)
+        {
+            HPPoint hp = damageQueue.Dequeue();
+
+            // Animate shrink then kill
+            yield return StartCoroutine(AnimateHpLoss(hp));
+
+            // optional small delay between items
+            yield return new WaitForSeconds(delayBetweenHp);
+        }
+
+        isProcessingDamage = false;
+    }
+
+    private IEnumerator AnimateHpLoss(HPPoint hp)
+    {
+        // If HPPoint uses a transform scale animation:
+        Transform t = hp.transform;
+        Vector3 startScale = t.localScale;
+        Vector3 endScale = Vector3.zero;
+
+        float time = 0f;
+
+        while (time < hpShrinkDuration)
+        {
+            time += Time.deltaTime;
+            float t01 = Mathf.Clamp01(time / hpShrinkDuration);
+            t.localScale = Vector3.Lerp(startScale, endScale, t01);
+            yield return null;
+        }
+
+        t.localScale = endScale;
+
+        // Finally call Kill() (your method that handles removal/destruction)
+        hp.Kill();
+    }
+
 
     public void Heal(int healAmount)
     {

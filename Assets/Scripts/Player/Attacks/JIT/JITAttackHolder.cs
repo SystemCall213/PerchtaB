@@ -7,8 +7,12 @@ public class JITAttackHolder : MonoBehaviour
 
     void OnEnable()
     {
-        Enemy.Instance.dead += DisableAttack;
         jITAttack.attackFinished += FinishAttack;
+    }
+
+    void Start()
+    {
+        Enemy.Instance.dead += DisableAttack;
     }
 
     void OnDisable()

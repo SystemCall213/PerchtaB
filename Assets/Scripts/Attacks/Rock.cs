@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 3f;
     protected Transform target;
     private bool isMoving = false;
     private float activeSeconds = 0.5f;
@@ -12,6 +12,7 @@ public class Rock : MonoBehaviour
     void Start()
     {
         col = GetComponent<Collider2D>();
+        col.enabled = false;
     }
 
     public void Move(Transform end)
@@ -31,8 +32,6 @@ public class Rock : MonoBehaviour
         // Check if reached
         if (Vector3.Distance(transform.position, target.position) < 0.05f)
         {
-            col.enabled = true;
-
             isMoving = false;
             Despawn();
         }
@@ -40,6 +39,7 @@ public class Rock : MonoBehaviour
 
     protected void Despawn()
     {
+        col.enabled = true;
         StartCoroutine(Kill());
     }
 

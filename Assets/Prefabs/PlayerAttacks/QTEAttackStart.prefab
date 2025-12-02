@@ -56,6 +56,9 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 4
   overlapFactor: 1.5
+  batchSpacing: 60
+  symbolsPerBatch: 4
+  firstBatch: 4
 --- !u!222 &8263100476466793682
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94,8 +97,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4819953797406079766}
   - {fileID: 4091343104194067106}
+  - {fileID: 4819953797406079766}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -115,10 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4556382f7922e489bb38b6247ba16d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circleTimer: {fileID: 8881277178689016491}
   qteSymbolsHolder: {fileID: 3128988047937485297}
   symbolPrefab: {fileID: 9095183315710793476, guid: f8d7b5d667faece45b573c1a4b6fa2fb, type: 3}
-  circleTimer: {fileID: 8881277178689016491}
   isAttacking: 0
+  wrongButtonTimePunishment: 0.3
 --- !u!222 &1151601996188970996
 CanvasRenderer:
   m_ObjectHideFlags: 0

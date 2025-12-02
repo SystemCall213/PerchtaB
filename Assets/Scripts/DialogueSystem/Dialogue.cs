@@ -23,6 +23,8 @@ public class Dialogue : MonoBehaviour
     {
         textComponent.text = string.Empty;
         speakerComponent.text = string.Empty;
+        StartCoroutine(FadeInGraphic(perchta, 1f));
+        StartCoroutine(FadeInGraphic(girl, 1f));
         girl.enabled = true;
         perchta.enabled = true;
 
@@ -30,6 +32,32 @@ public class Dialogue : MonoBehaviour
         index = 0;
         StartCoroutine(TypeLine());
     }
+
+    private IEnumerator FadeInGraphic(Image graphic, float duration)
+    {
+        Color c = graphic.color;
+        c.a = 0f;
+        graphic.color = c;
+
+        graphic.enabled = true;
+
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float t = time / duration;
+
+            c.a = Mathf.Lerp(0f, 1f, t);
+            graphic.color = c;
+
+            yield return null;
+        }
+
+        c.a = 1f;
+        graphic.color = c;
+    }
+
 
     IEnumerator TypeLine()
     {
