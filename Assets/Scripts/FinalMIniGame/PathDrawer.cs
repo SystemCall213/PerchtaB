@@ -34,7 +34,7 @@ public class PathDrawer : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             DrawLine();
-            CheckBoundaryExit();
+            CheckCheckpointProximity();
         }
     }
 
@@ -67,7 +67,6 @@ public class PathDrawer : MonoBehaviour
 
             nextCheckpointIndex++;
 
-
             // Now activate the boundary that leads to the NEXT checkpoint
             // (if there is one)
             if (nextCheckpointIndex - 1 >= 0 && nextCheckpointIndex - 1 < boundaries.Length)
@@ -83,26 +82,21 @@ public class PathDrawer : MonoBehaviour
         }
     }
 
-    private void CheckBoundaryExit()
+    private void CheckCheckpointProximity()
     {
+        if (nextCheckpointIndex >= checkpoints.Length)
+            return;
+
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
 
-        foreach (var b in boundaries)
+        CheckPoint target = checkpoints[nextCheckpointIndex];
+
+        float distance = Vector3.Distance(mousePos, target.transform.position);
+
+        if (distance < 0.25f)
         {
-            if (!b.active)
-                continue;
-
-            Collider2D col = b.GetComponent<Collider2D>();
-            if (col == null)
-                continue;
-
-            // If mouse is NOT inside the active boundary collider → reset
-            if (!col.bounds.Contains(mousePos))
-            {
-                ResetDrawing();
-                return;
-            }
+            HitCheckpoint(target);   // accept checkpoint
         }
     }
 

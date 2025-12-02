@@ -47,7 +47,7 @@ public class JITAttack : PlayerAttack
     {
         attacking = true;
         currentSpeed = baseSpeed;
-        circleTimer.StartTimer(10f); // 10 seconds attack window
+        circleTimer.StartTimer(5f); // 10 seconds attack window
         RoundManager.Instance.ToggleButtons();
         
         // Start marker on left side

@@ -28,7 +28,7 @@ public class QTEAttack : PlayerAttack
         qteSymbolsHolder.gameObject.SetActive(true);
         circleTimer.StartTimer(10f);
         correctPressedSymbols = 0;
-        qteSymbolsHolder.firstBatch = 4;
+        qteSymbolsHolder.firstBatch = 3;
 
         StartCoroutine(AttackRoutine());
     }
@@ -39,7 +39,7 @@ public class QTEAttack : PlayerAttack
             Destroy(s.gameObject);
         symbols.Clear();
         
-        int dmg = correctPressedSymbols / 4;
+        int dmg = correctPressedSymbols / 3;
 
         Enemy.Instance.TakeDamage(dmg);
 
@@ -75,7 +75,6 @@ public class QTEAttack : PlayerAttack
             {
                 // Wrong input -> outline red
                 symbols[0].SetOutlineRed();
-                print("what");
                 circleTimer.timeLeft -= wrongButtonTimePunishment;
                 if (circleTimer.timeLeft < 0)
                 {
@@ -100,7 +99,7 @@ public class QTEAttack : PlayerAttack
             Destroy(s.gameObject);
         symbols.Clear();
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 6; i++)
         {
             AddNewSymbol();
         }
@@ -146,7 +145,7 @@ public class QTEAttack : PlayerAttack
                 Destroy(first.gameObject);
             });
         qteSymbolsHolder.firstBatch -= 1;
-        if (qteSymbolsHolder.firstBatch == 0) qteSymbolsHolder.firstBatch = 4;
+        if (qteSymbolsHolder.firstBatch == 0) qteSymbolsHolder.firstBatch = 3;
             
 
         // Shift remaining left (tween)

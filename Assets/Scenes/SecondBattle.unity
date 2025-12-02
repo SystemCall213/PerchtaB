@@ -178,6 +178,62 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0.1
   numOfRounds: 1
   delayBetweenRounds: 1
+--- !u!1 &152757771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152757772}
+  - component: {fileID: 152757773}
+  m_Layer: 0
+  m_Name: RockAttack6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &152757772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152757771}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1060177769}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &152757773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152757771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 1408616170}
+  - {fileID: 1408616167}
+  - {fileID: 1408616159}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616156}
+  - {fileID: 1408616162}
+  - {fileID: 1408616155}
+  delayBetweenExecutingAreas: 0
+  numOfRounds: 1
+  delayBetweenRounds: 1
 --- !u!1 &169036567
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,8 +585,74 @@ Transform:
   m_Children:
   - {fileID: 1175323646}
   - {fileID: 1583314060}
+  - {fileID: 1060177769}
+  - {fileID: 1056102651}
+  - {fileID: 695949276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &385058863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385058864}
+  - component: {fileID: 385058865}
+  m_Layer: 0
+  m_Name: SplinterAttack4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &385058864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385058863}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 695949276}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385058865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385058863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 2118929881}
+  - {fileID: 2118929880}
+  - {fileID: 2118929879}
+  - {fileID: 2118929861}
+  - {fileID: 2118929878}
+  - {fileID: 2118929877}
+  - {fileID: 2118929876}
+  - {fileID: 2118929872}
+  - {fileID: 2118929871}
+  - {fileID: 2118929870}
+  - {fileID: 2118929869}
+  - {fileID: 2118929867}
+  - {fileID: 2118929866}
+  - {fileID: 2118929865}
+  - {fileID: 2118929863}
+  delayBetweenExecutingAreas: 0.5
+  numOfRounds: 1
+  delayBetweenRounds: 1
 --- !u!1 &409703867
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +705,69 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0.2
   numOfRounds: 1
   delayBetweenRounds: 0.5
+--- !u!1 &599986219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599986220}
+  - component: {fileID: 599986221}
+  m_Layer: 0
+  m_Name: SplinterAttack4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &599986220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599986219}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1056102651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &599986221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599986219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 2118929881}
+  - {fileID: 2118929880}
+  - {fileID: 2118929879}
+  - {fileID: 2118929861}
+  - {fileID: 2118929878}
+  - {fileID: 2118929877}
+  - {fileID: 2118929876}
+  - {fileID: 2118929872}
+  - {fileID: 2118929871}
+  - {fileID: 2118929870}
+  - {fileID: 2118929869}
+  - {fileID: 2118929867}
+  - {fileID: 2118929866}
+  - {fileID: 2118929865}
+  - {fileID: 2118929863}
+  delayBetweenExecutingAreas: 0.5
+  numOfRounds: 1
+  delayBetweenRounds: 1
 --- !u!1 &616906709
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +824,73 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0.1
   numOfRounds: 1
   delayBetweenRounds: 1
+--- !u!114 &629391494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3631996096107725395, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+  m_PrefabInstance: {fileID: 2140300191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &636896621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 636896622}
+  - component: {fileID: 636896623}
+  m_Layer: 0
+  m_Name: RockAttack6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &636896622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636896621}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 695949276}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &636896623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636896621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 1408616170}
+  - {fileID: 1408616167}
+  - {fileID: 1408616159}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616156}
+  - {fileID: 1408616162}
+  - {fileID: 1408616155}
+  delayBetweenExecutingAreas: 0.1
+  numOfRounds: 1
+  delayBetweenRounds: 1
 --- !u!114 &681982285 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3425980746114973139, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
@@ -650,6 +902,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04eeab864da15424fa175a8084882823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &695949275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 695949276}
+  - component: {fileID: 695949277}
+  m_Layer: 0
+  m_Name: Pattern1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &695949276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695949275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.57, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 765105626}
+  - {fileID: 636896622}
+  - {fileID: 385058864}
+  m_Father: {fileID: 319109670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695949277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695949275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e340d20a1ef81748b90697e11e8df95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 1
+  timeBuffer: 7
+  battleText: 
 --- !u!1 &712029837
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +1086,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712029837}
   m_CullTransparentMesh: 1
+--- !u!1 &765105625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 765105626}
+  - component: {fileID: 765105627}
+  m_Layer: 0
+  m_Name: RockAttack3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &765105626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765105625}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 695949276}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &765105627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765105625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 1408616168}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616161}
+  - {fileID: 1408616166}
+  - {fileID: 1408616159}
+  - {fileID: 1408616156}
+  - {fileID: 1408616163}
+  delayBetweenExecutingAreas: 0.1
+  numOfRounds: 1
+  delayBetweenRounds: 1
 --- !u!1 &794314835
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +1311,62 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813538402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 1408616170}
+  - {fileID: 1408616167}
+  - {fileID: 1408616159}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616156}
+  - {fileID: 1408616162}
+  - {fileID: 1408616155}
+  delayBetweenExecutingAreas: 0.1
+  numOfRounds: 1
+  delayBetweenRounds: 1
+--- !u!1 &873063443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873063444}
+  - component: {fileID: 873063445}
+  m_Layer: 0
+  m_Name: RockAttack6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &873063444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873063443}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1056102651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &873063445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873063443}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
@@ -1429,6 +1843,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3305f0cf5892f824aafdc6ad72fbddca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &940033067
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1060177769}
+    m_Modifications:
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.1642075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52926
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.006178744
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555895681160878772, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: m_Name
+      value: SplinterAttack1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: numOfRounds
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: attackAreas.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: attackAreas.Array.data[0]
+      value: 
+      objectReference: {fileID: 2118929876}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: attackAreas.Array.data[1]
+      value: 
+      objectReference: {fileID: 2118929868}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: attackAreas.Array.data[2]
+      value: 
+      objectReference: {fileID: 2118929862}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: attackAreas.Array.data[3]
+      value: 
+      objectReference: {fileID: 2118929873}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: attackAreas.Array.data[4]
+      value: 
+      objectReference: {fileID: 2118929875}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: attackAreas.Array.data[5]
+      value: 
+      objectReference: {fileID: 2118929864}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: attackAreas.Array.data[6]
+      value: 
+      objectReference: {fileID: 2118929862}
+    - target: {fileID: 4361133131429958500, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+      propertyPath: delayBetweenExecutingAreas
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+--- !u!4 &940033068 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
+  m_PrefabInstance: {fileID: 940033067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1005427047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,6 +1995,106 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0
   numOfRounds: 1
   delayBetweenRounds: 1
+--- !u!1 &1056102650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056102651}
+  - component: {fileID: 1056102652}
+  m_Layer: 0
+  m_Name: Pattern1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1056102651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056102650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.57, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1304726295}
+  - {fileID: 873063444}
+  - {fileID: 599986220}
+  m_Father: {fileID: 319109670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1056102652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056102650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e340d20a1ef81748b90697e11e8df95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 1
+  timeBuffer: 7
+  battleText: 
+--- !u!1 &1060177768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1060177769}
+  - component: {fileID: 1060177770}
+  m_Layer: 0
+  m_Name: Pattern1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1060177769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060177768}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.57, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 940033068}
+  - {fileID: 152757772}
+  - {fileID: 1680192430}
+  m_Father: {fileID: 319109670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060177770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060177768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e340d20a1ef81748b90697e11e8df95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 2.5
+  timeBuffer: 7
+  battleText: I'm a bitch my name is Robert
 --- !u!114 &1063509263 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 364607586155460010, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
@@ -1624,8 +2240,8 @@ Transform:
   - {fileID: 255550572}
   - {fileID: 1335492977}
   - {fileID: 409703868}
-  - {fileID: 2000690431}
   - {fileID: 2075022953}
+  - {fileID: 2000690431}
   - {fileID: 1005427048}
   - {fileID: 911946735}
   - {fileID: 1759287253}
@@ -1818,6 +2434,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296892351}
   m_CullTransparentMesh: 1
+--- !u!1 &1304726294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304726295}
+  - component: {fileID: 1304726296}
+  m_Layer: 0
+  m_Name: RockAttack3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1304726295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304726294}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1056102651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1304726296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304726294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 1408616168}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616161}
+  - {fileID: 1408616166}
+  - {fileID: 1408616159}
+  - {fileID: 1408616156}
+  - {fileID: 1408616163}
+  delayBetweenExecutingAreas: 0.1
+  numOfRounds: 1
+  delayBetweenRounds: 1
 --- !u!1 &1335492976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +2542,11 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0.2
   numOfRounds: 1
   delayBetweenRounds: 0.5
+--- !u!224 &1384757713 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8018331764751080398, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+  m_PrefabInstance: {fileID: 2140300191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1408616154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2103,6 +2780,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6ad16729c903648849777c2bd12725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1567271286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567271287}
+  - component: {fileID: 1567271288}
+  m_Layer: 0
+  m_Name: SplinterAttack4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1567271287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567271286}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1583314060}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567271288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567271286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 2118929881}
+  - {fileID: 2118929880}
+  - {fileID: 2118929879}
+  - {fileID: 2118929861}
+  - {fileID: 2118929878}
+  - {fileID: 2118929877}
+  - {fileID: 2118929876}
+  - {fileID: 2118929872}
+  - {fileID: 2118929871}
+  - {fileID: 2118929870}
+  - {fileID: 2118929869}
+  - {fileID: 2118929867}
+  - {fileID: 2118929866}
+  - {fileID: 2118929865}
+  - {fileID: 2118929863}
+  delayBetweenExecutingAreas: 0.5
+  numOfRounds: 1
+  delayBetweenRounds: 1
 --- !u!1 &1583314059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,7 +2873,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1849425290}
+  - {fileID: 1874350309}
+  - {fileID: 1779321435}
+  - {fileID: 1567271287}
   m_Father: {fileID: 319109670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1583314061
@@ -2148,8 +2890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e340d20a1ef81748b90697e11e8df95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 3
-  timeBuffer: 5
+  timeBetweenAttacks: 1
+  timeBuffer: 7
   battleText: 
 --- !u!1 &1620656349
 GameObject:
@@ -2281,6 +3023,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1680192429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1680192430}
+  - component: {fileID: 1680192431}
+  m_Layer: 0
+  m_Name: SplinterAttack3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1680192430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680192429}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1060177769}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1680192431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680192429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 2118929882}
+  - {fileID: 2118929884}
+  - {fileID: 2118929874}
+  - {fileID: 2118929868}
+  delayBetweenExecutingAreas: 0.4
+  numOfRounds: 1
+  delayBetweenRounds: 0.5
 --- !u!1 &1759287252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,6 +3131,62 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0.1
   numOfRounds: 1
   delayBetweenRounds: 1
+--- !u!1 &1779321434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1779321435}
+  - component: {fileID: 1779321436}
+  m_Layer: 0
+  m_Name: RockAttack6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1779321435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779321434}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1583314060}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779321436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779321434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 1408616170}
+  - {fileID: 1408616167}
+  - {fileID: 1408616159}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616156}
+  - {fileID: 1408616162}
+  - {fileID: 1408616155}
+  delayBetweenExecutingAreas: 0.1
+  numOfRounds: 1
+  delayBetweenRounds: 1
 --- !u!1 &1788241419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +3231,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1849425289
+--- !u!1 &1874350308
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2389,22 +3239,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1849425290}
-  - component: {fileID: 1849425291}
+  - component: {fileID: 1874350309}
+  - component: {fileID: 1874350310}
   m_Layer: 0
-  m_Name: SplinterAttack2
+  m_Name: RockAttack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1849425290
+--- !u!4 &1874350309
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849425289}
+  m_GameObject: {fileID: 1874350308}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2413,26 +3263,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1583314060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1849425291
+--- !u!114 &1874350310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849425289}
+  m_GameObject: {fileID: 1874350308}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackAreas:
-  - {fileID: 2118929884}
-  - {fileID: 2118929883}
-  - {fileID: 2118929882}
-  - {fileID: 2118929861}
-  delayBetweenExecutingAreas: 0.2
+  - {fileID: 1408616168}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616161}
+  - {fileID: 1408616166}
+  - {fileID: 1408616159}
+  - {fileID: 1408616156}
+  - {fileID: 1408616163}
+  delayBetweenExecutingAreas: 0.1
   numOfRounds: 1
-  delayBetweenRounds: 0.5
+  delayBetweenRounds: 1
 --- !u!1 &2000690430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,6 +3856,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b82201e3be11a6d4f93d12b97c04fe04, type: 3}
+    - target: {fileID: 3631996096107725395, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631996096107725395, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3759872761460556114, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: m_Name
       value: MainCanvas
@@ -3013,7 +3875,7 @@ PrefabInstance:
     - target: {fileID: 4084211287911852292, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: patterns.Array.data[0]
       value: 
-      objectReference: {fileID: 1583314061}
+      objectReference: {fileID: 1060177770}
     - target: {fileID: 4084211287911852292, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: patterns.Array.data[1]
       value: 
@@ -3037,6 +3899,18 @@ PrefabInstance:
     - target: {fileID: 4334945296845990273, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: sceneToTransitionTo
       value: AfterSecondBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232542735282301035, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+      propertyPath: battlefield
+      value: 
+      objectReference: {fileID: 629391494}
+    - target: {fileID: 5232542735282301035, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+      propertyPath: textActions
+      value: 
+      objectReference: {fileID: 1384757713}
+    - target: {fileID: 6050020737083995858, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+      propertyPath: maxHp
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7282688522940340988, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: m_AnchorMax.y

@@ -14,8 +14,8 @@ public class AttacksManager : MonoBehaviour
         float percent = (float) currentHp / maxHp;
         print(percent);
 
-        if (percent > 0.6) qTEAttack.StartAttack();
-        else if (percent > 0.2) jITAttackHolder.StartAttack();
+        if (percent > 0.66) qTEAttack.StartAttack();
+        else if (percent > 0.33) jITAttackHolder.StartAttack();
         else attackFill.StartAttack();
     }
     

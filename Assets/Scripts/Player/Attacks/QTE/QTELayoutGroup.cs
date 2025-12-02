@@ -10,10 +10,10 @@ public class QTEOverlapLayoutGroup : LayoutGroup
     public float batchSpacing = 60f;
 
     [Tooltip("How many symbols per batch AFTER the first batch")]
-    public int symbolsPerBatch = 4;
+    public int symbolsPerBatch = 3;
 
     [Tooltip("The size of the FIRST batch (e.g. 4)")]
-    public int firstBatch = 4;
+    public int firstBatch = 3;
 
     public override void CalculateLayoutInputHorizontal()
     {

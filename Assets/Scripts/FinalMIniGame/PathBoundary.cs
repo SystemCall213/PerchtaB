@@ -9,7 +9,7 @@ public class PathBoundary : MonoBehaviour
         if (active)
         {
             PathDrawer drawer = FindObjectOfType<PathDrawer>();
-            drawer.ResetDrawing();
+            if (active) drawer.ResetDrawing();
         }
     }
 }

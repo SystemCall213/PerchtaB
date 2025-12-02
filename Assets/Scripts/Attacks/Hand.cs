@@ -9,7 +9,7 @@ public class Hand : MonoBehaviour
     private int numOfTries;
     public int minNumOfTries = 7;
     public int maxNumOfTries = 10;
-    public float timeBetweenExtending = 1.5f;
+    public float timeBetweenExtending = 0.5f;
     public Arm armPrefab;
 
 
@@ -61,7 +61,7 @@ public class Hand : MonoBehaviour
                 delta = Mathf.Clamp(delta, -75f, 75f);
 
                 // --- Step 2: Rotate gradually using transform.Rotate ---
-                float duration = 1f;
+                float duration = 0.35f;
                 float t = 0f;
 
                 while (t < duration)

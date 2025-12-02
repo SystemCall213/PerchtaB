@@ -10,6 +10,8 @@ public class RoundManager : MonoBehaviour
     public RectTransform buttons;
     public RectTransform girlHp;
     public RectTransform garbageHp;
+    public RectTransform textActions;
+    public Image battlefield;
     public float animationDuration = 2f;
     private bool isExpanded = false;
 
@@ -43,21 +45,133 @@ public class RoundManager : MonoBehaviour
         {
             if (isExpanded)
             {
-                Player.Instance.GetComponent<SpriteRenderer>().enabled = false;
+                SpriteRenderer playerSprite = Player.Instance.GetComponent<SpriteRenderer>();
+                StartCoroutine(hidePlayerSprite(playerSprite));
+                BattleText.Instance.SetText("");
                 ToggleButtons();
             }
             else
             {
-                Player.Instance.GetComponent<SpriteRenderer>().enabled = true;
+                Transform playerTransform = Player.Instance.GetTransform();
+                playerTransform.localPosition = new Vector3(0, 0, 0);
+                SpriteRenderer playerSprite = Player.Instance.GetComponent<SpriteRenderer>();
+                StartCoroutine(showPlayerSprite(playerSprite));
             }
             BattleText.Instance.SetText("");
-            battleField.TogglePanel();
+            //battleField.TogglePanel();
             StartCoroutine(moveEnemy());
             StartCoroutine(moveButtons());
+            StartCoroutine(moveText());
             //StartCoroutine(moveHpBars());
-            if (!isExpanded) enemy.Execute();
+            if (!isExpanded) 
+            {
+                enemy.Execute();
+                StartCoroutine(showBattlefield());
+            }
+            else
+            {
+                StartCoroutine(hideBattlefield());
+            }
             isExpanded = !isExpanded;   
         }
+    }
+
+    private IEnumerator showPlayerSprite(SpriteRenderer playerSprite)
+    {
+        Color c = playerSprite.color;
+        float elapsed = 0f;
+        float duration = 2f; 
+
+        c.a = 0f;
+        playerSprite.color = c;
+        playerSprite.enabled = true;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            c.a = Mathf.Lerp(0f, 1f, t);
+            playerSprite.color = c;
+
+            yield return null;
+        }
+
+        c.a = 1f;
+        playerSprite.color = c;
+    }
+
+    private IEnumerator hidePlayerSprite(SpriteRenderer playerSprite)
+    {
+        Color c = playerSprite.color;
+        float elapsed = 0f;
+        float duration = 2f;
+
+        c.a = 1f;
+        playerSprite.color = c;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            c.a = Mathf.Lerp(1f, 0f, t);
+            playerSprite.color = c;
+
+            yield return null;
+        }
+
+        c.a = 0f;
+        playerSprite.color = c;
+    }
+
+    private IEnumerator showBattlefield()
+    {
+        Color c = battlefield.color;
+        float elapsed = 0f;
+        float duration = 2f; 
+
+        c.a = 0f;
+        battlefield.color = c;
+        battlefield.enabled = true;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            c.a = Mathf.Lerp(0f, 1f, t);
+            battlefield.color = c;
+
+            yield return null;
+        }
+
+        c.a = 1f;
+        battlefield.color = c;
+    }
+
+    private IEnumerator hideBattlefield()
+    {
+        Color c = battlefield.color;
+        float elapsed = 0f;
+        float duration = 2f;
+
+        c.a = 1f;
+        battlefield.color = c;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            c.a = Mathf.Lerp(1f, 0f, t);
+            battlefield.color = c;
+
+            yield return null;
+        }
+
+        c.a = 0f;
+        battlefield.color = c;
     }
 
     private IEnumerator moveEnemy()
@@ -136,16 +250,16 @@ public class RoundManager : MonoBehaviour
             if (isExpanded)
             {
                 left = start.x;
-                bottom = Mathf.Lerp(start.y, start.y - 300f, t);
+                bottom = Mathf.Lerp(start.y, start.y - 700f, t);
                 right = start.z;
-                top = Mathf.Lerp(start.w, start.w - 300f, t);
+                top = Mathf.Lerp(start.w, start.w - 700f, t);
             }
             else
             {
                 left = start.x;
-                bottom = Mathf.Lerp(start.y, start.y + 300f, t);
+                bottom = Mathf.Lerp(start.y, start.y + 700f, t);
                 right = start.z;
-                top = Mathf.Lerp(start.w, start.w + 300f, t);
+                top = Mathf.Lerp(start.w, start.w + 700f, t);
             }
 
             buttons.offsetMin = new Vector2(left, bottom);
@@ -156,13 +270,65 @@ public class RoundManager : MonoBehaviour
 
         if (isExpanded)
         {
-            buttons.offsetMin = new Vector2(start.x, start.y - 300f);
-            buttons.offsetMax = new Vector2(start.z, start.w - 300f);
+            buttons.offsetMin = new Vector2(start.x, start.y - 700f);
+            buttons.offsetMax = new Vector2(start.z, start.w - 700f);
         }
         else
         {
-            buttons.offsetMin = new Vector2(start.x, start.y + 300f);
-            buttons.offsetMax = new Vector2(start.z, start.w + 300f);
+            buttons.offsetMin = new Vector2(start.x, start.y + 700f);
+            buttons.offsetMax = new Vector2(start.z, start.w + 700f);
+        }
+    }
+
+    private IEnumerator moveText()
+    {
+        Vector4 start = new Vector4(
+            textActions.offsetMin.x,  // left
+            textActions.offsetMin.y,  // bottom
+            textActions.offsetMax.x,  // right
+            textActions.offsetMax.y   // top
+        );
+
+        float elapsed = 0f;
+        while (elapsed < animationDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / animationDuration);
+            float left;
+            float bottom;
+            float right;
+            float top;
+
+            if (!isExpanded)
+            {
+                left = start.x;
+                bottom = Mathf.Lerp(start.y, start.y + 500f, t);
+                right = start.z;
+                top = Mathf.Lerp(start.w, start.w + 500f, t);
+            }
+            else
+            {
+                left = start.x;
+                bottom = Mathf.Lerp(start.y, start.y - 500f, t);
+                right = start.z;
+                top = Mathf.Lerp(start.w, start.w - 500f, t);
+            }
+
+            textActions.offsetMin = new Vector2(left, bottom);
+            textActions.offsetMax = new Vector2(right, top);
+
+            yield return null;
+        }
+
+        if (!isExpanded)
+        {
+            textActions.offsetMin = new Vector2(start.x, start.y + 500f);
+            textActions.offsetMax = new Vector2(start.z, start.w + 500f);
+        }
+        else
+        {
+            textActions.offsetMin = new Vector2(start.x, start.y - 500f);
+            textActions.offsetMax = new Vector2(start.z, start.w - 500f);
         }
     }
 

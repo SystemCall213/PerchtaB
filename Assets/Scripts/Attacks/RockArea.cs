@@ -22,7 +22,7 @@ public class RockArea : AttackArea
 
     private IEnumerator Execute()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         spriteRenderer.enabled = false;
 

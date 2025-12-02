@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     public HPBar hPBar;
     private List<Item> items;
+    private bool alreadyDead = false;
 
     private void Awake()
     {
@@ -42,8 +43,9 @@ public class Player : MonoBehaviour
     public void TakeDamage()
     {
         int currentHp = hPBar.TakeDmg(1);
-        if (currentHp == 0)
+        if (currentHp == 0 && !alreadyDead)
         {
+            alreadyDead = true;
             DeathScreen.Instance.Death();
         }
     }
