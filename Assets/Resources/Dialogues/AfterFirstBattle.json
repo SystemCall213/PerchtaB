@@ -11,12 +11,12 @@
     {
       "choices": [
         {
-          "speaker": "You",
+          "speaker": "",
           "text": "*stay still while Perchta looks around*",
           "nextLineId": "line4"
         },
         {
-          "speaker": "You",
+          "speaker": "",
           "text": "*offer schnapps to Perchta*",
           "nextLineId": "lineSchnapps1",
           "requiredFlag": "has_schnapps",
@@ -32,6 +32,7 @@
     {
       "speaker": "Perchta",
       "id": "lineSchnapps1",
+      "conditionFlag": "battle_easier",
       "text": "Me accepts such a gift, little c-c-cub, Me shall enjoyth it with me sisters much… Now go. C-c-clean thy livingth room."
     }
   ]

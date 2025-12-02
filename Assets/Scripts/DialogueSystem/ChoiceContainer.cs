@@ -9,7 +9,6 @@ public class ChoiceContainer : MonoBehaviour
     {
         // Remove old buttons
         KillChildren();
-        
 
         foreach (var choice in choices)
         {

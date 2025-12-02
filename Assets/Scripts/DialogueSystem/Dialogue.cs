@@ -23,14 +23,31 @@ public class Dialogue : MonoBehaviour
     {
         textComponent.text = string.Empty;
         speakerComponent.text = string.Empty;
-        StartCoroutine(FadeInGraphic(perchta, 1f));
-        StartCoroutine(FadeInGraphic(girl, 1f));
+
         girl.enabled = true;
         perchta.enabled = true;
 
-        LoadDialogueFromFile();
+        StartCoroutine(StartDialogueSequence());
+    }
+
+    private IEnumerator StartDialogueSequence()
+    {
+        yield return StartCoroutine(FadeInBothGraphics());
+
         index = 0;
+        LoadDialogueFromFile();
         StartCoroutine(TypeLine());
+    }
+
+    private IEnumerator FadeInBothGraphics()
+    {
+        Coroutine c1 = StartCoroutine(FadeInGraphic(perchta, 1f));
+        Coroutine c2 = StartCoroutine(FadeInGraphic(girl, 1f));
+
+        yield return null;
+
+        yield return c1;
+        yield return c2;
     }
 
     private IEnumerator FadeInGraphic(Image graphic, float duration)
@@ -92,7 +109,7 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-        if (waitingForChoice) return;
+        if (waitingForChoice || lines == null) return;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -139,6 +156,15 @@ public class Dialogue : MonoBehaviour
         else
         {
             index++;
+
+            while (index < lines.Count && lines[index].conditionFlag != null)
+            {
+                if (PlayerFlags.Instance.HasFlag(lines[index].conditionFlag))
+                {
+                    break;
+                }
+                index++;
+            }
 
             if (index >= lines.Count)
             {

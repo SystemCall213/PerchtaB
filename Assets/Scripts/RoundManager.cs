@@ -54,7 +54,7 @@ public class RoundManager : MonoBehaviour
             battleField.TogglePanel();
             StartCoroutine(moveEnemy());
             StartCoroutine(moveButtons());
-            StartCoroutine(moveHpBars());
+            //StartCoroutine(moveHpBars());
             if (!isExpanded) enemy.Execute();
             isExpanded = !isExpanded;   
         }
@@ -166,6 +166,7 @@ public class RoundManager : MonoBehaviour
         }
     }
 
+    // deprecated
     private IEnumerator moveHpBars()
     {
         Vector4 girlStart = new Vector4(

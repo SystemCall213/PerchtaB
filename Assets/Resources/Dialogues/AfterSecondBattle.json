@@ -1,0 +1,35 @@
+{
+  "lines": [
+    {
+      "speaker": "Perchten",
+      "text": "Ohohoho what do we have here… what a child, what a cute little child! Cleaned the room, the whole room! See no dust, no dust at all! Oh what a precious thing you are!"
+    },
+    {
+      "choices": [
+        {
+          "speaker": "",
+          "text": "*tighten your grip around the broom*",
+          "nextLineId": "line5"
+        },
+        {
+          "speaker": "",
+          "text": "*offer schnapps to Perchta*",
+          "nextLineId": "lineSchnapps2",
+          "requiredFlag": "has_schnapps",
+          "setFlag": "battle_easier"
+        }
+      ]
+    },
+    {
+      "id": "line5",
+      "speaker": "Perchten",
+      "text": "It’s such a shame, ma’dear that I am utterly out of time, oh, so out of time. I could chat with you and made you a lovely, oh, JUST LOVELY piece of meat pie. You’d have such a lovely, tender, delicate, REFINED meat… But still I must go… Continue getting rid of the mess, ma’sweetie, Oh continue Getting RID OF IT!"
+    },
+    {
+      "id": "lineSchnapps2",
+      "speaker": "Perchten",
+      "conditionFlag": "battle_easier",
+      "text": "What a generous child, oh, what a generous one! GIVE IT! I shall drink it, oh, I will drink it all alone… And you little precious child continue with that filthy house, continue your good work!"
+    }
+  ]
+}
