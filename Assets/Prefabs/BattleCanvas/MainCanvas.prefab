@@ -1019,6 +1019,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7620948839806750503, guid: 5e1531215882eae468ca1c97dc77d135, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620948839806750503, guid: 5e1531215882eae468ca1c97dc77d135, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a9f4f0e63d74e764c876994db77b9034, type: 2}
+    - target: {fileID: 7620948839806750503, guid: 5e1531215882eae468ca1c97dc77d135, type: 3}
+      propertyPath: m_fontStyle
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620948839806750503, guid: 5e1531215882eae468ca1c97dc77d135, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620948839806750503, guid: 5e1531215882eae468ca1c97dc77d135, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4130632226293866153, guid: a9f4f0e63d74e764c876994db77b9034, type: 2}
     - target: {fileID: 8413991186680403868, guid: 5e1531215882eae468ca1c97dc77d135, type: 3}
       propertyPath: m_Name
       value: Proceed
@@ -1085,6 +1105,10 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: a9f4f0e63d74e764c876994db77b9034, type: 2}
+    - target: {fileID: 2861029610184117255, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
+      propertyPath: m_fontStyle
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2861029610184117255, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -1178,6 +1202,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a9f4f0e63d74e764c876994db77b9034, type: 2}
     - target: {fileID: 4887614083408531077, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
+      propertyPath: m_fontStyle
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887614083408531077, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -4130632226293866153, guid: a9f4f0e63d74e764c876994db77b9034, type: 2}
@@ -1187,16 +1215,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977979570815602979, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
       propertyPath: m_text
-      value: F ind item
+      value: Find item
       objectReference: {fileID: 0}
     - target: {fileID: 4977979570815602979, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: a9f4f0e63d74e764c876994db77b9034, type: 2}
     - target: {fileID: 4977979570815602979, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
+      propertyPath: m_fontStyle
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977979570815602979, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -4130632226293866153, guid: a9f4f0e63d74e764c876994db77b9034, type: 2}
+    - target: {fileID: 4977979570815602979, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
+      propertyPath: m_characterSpacing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4977979570815602979, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -1221,6 +1257,10 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: a9f4f0e63d74e764c876994db77b9034, type: 2}
+    - target: {fileID: 5659811235040376467, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
+      propertyPath: m_fontStyle
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5659811235040376467, guid: e18f4c313a9d1824b806df6261e0afa5, type: 3}
       propertyPath: m_sharedMaterial
       value: 

@@ -198,16 +198,16 @@ public class RoundManager : MonoBehaviour
             if (!isExpanded)
             {
                 left = start.x;
-                bottom = Mathf.Lerp(start.y, start.y - 600f, t);
+                bottom = Mathf.Lerp(start.y, start.y - 800f, t);
                 right = start.z;
-                top = Mathf.Lerp(start.w, start.w - 600f, t);
+                top = Mathf.Lerp(start.w, start.w - 800f, t);
             }
             else
             {
                 left = start.x;
-                bottom = Mathf.Lerp(start.y, start.y + 600f, t);
+                bottom = Mathf.Lerp(start.y, start.y + 800f, t);
                 right = start.z;
-                top = Mathf.Lerp(start.w, start.w + 600f, t);
+                top = Mathf.Lerp(start.w, start.w + 800f, t);
             }
 
             enemyTransform.offsetMin = new Vector2(left, bottom);
@@ -218,13 +218,13 @@ public class RoundManager : MonoBehaviour
 
         if (!isExpanded)
         {
-            enemyTransform.offsetMin = new Vector2(start.x, start.y - 600f);
-            enemyTransform.offsetMax = new Vector2(start.z, start.w - 600f);
+            enemyTransform.offsetMin = new Vector2(start.x, start.y - 800f);
+            enemyTransform.offsetMax = new Vector2(start.z, start.w - 800f);
         }
         else
         {
-            enemyTransform.offsetMin = new Vector2(start.x, start.y + 600f);
-            enemyTransform.offsetMax = new Vector2(start.z, start.w + 600f);
+            enemyTransform.offsetMin = new Vector2(start.x, start.y + 800f);
+            enemyTransform.offsetMax = new Vector2(start.z, start.w + 800f);
         }
     }
 

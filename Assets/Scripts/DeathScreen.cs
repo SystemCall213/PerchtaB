@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class DeathScreen : MonoBehaviour
 {
     public static DeathScreen Instance;
+    public GameObject killingAnimationObject;
     private float fadeInDuration = 2f;
     private Image deathScreen;
     public GameObject restartButton;
@@ -27,6 +28,22 @@ public class DeathScreen : MonoBehaviour
 
     public void Death()
     {
+        StartCoroutine(DieWithAnimation());
+    }
+
+    public IEnumerator DieWithAnimation()
+    {
+        killingAnimationObject.GetComponent<SpriteRenderer>().enabled = true;
+        Animator anim = killingAnimationObject.GetComponent<Animator>();
+        anim.enabled = true;
+        anim.Play("KillingAnimation");
+
+        // wait until animation fully plays
+        var state = anim.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(state.length - 0.04f);
+
+        anim.enabled = false;
+
         deathScreen.enabled = true;
         restartButton.SetActive(true);
 

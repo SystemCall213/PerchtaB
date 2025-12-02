@@ -22,6 +22,7 @@ public class JITAttack : PlayerAttack
 
     void OnEnable()
     {
+        circleTimer.timerExpired += FinishAttack;
         oneDmgHitZone.inTheZone += ZoneInteraction;
         twoDmgHitZone.inTheZone += ZoneInteraction;
     }

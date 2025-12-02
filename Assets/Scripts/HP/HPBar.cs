@@ -65,6 +65,26 @@ public class HPBar : MonoBehaviour
         isProcessingDamage = false;
     }
 
+    private IEnumerator AnimateHpGain(HPPoint hp)
+    {
+        Transform t = hp.transform;
+
+        Vector3 startScale = Vector3.zero;
+        Vector3 endScale = Vector3.one;  // Assuming original scale is (1,1,1)
+
+        float time = 0f;
+
+        while (time < hpShrinkDuration)
+        {
+            time += Time.deltaTime;
+            float t01 = Mathf.Clamp01(time / hpShrinkDuration);
+            t.localScale = Vector3.Lerp(startScale, endScale, t01);
+            yield return null;
+        }
+
+        t.localScale = endScale;
+    }
+
     private IEnumerator AnimateHpLoss(HPPoint hp)
     {
         // If HPPoint uses a transform scale animation:
@@ -107,9 +127,15 @@ public class HPBar : MonoBehaviour
                     transform
                 );
 
+                // Add to list BEFORE animating (so CurrentHp is correct)
+                hPPoints.Add(hPPoint);
+
+                // Start at zero scale (invisible)
+                hPPoint.transform.localScale = Vector3.zero;
                 hPPoint.transform.localPosition = Vector3.zero;
 
-                hPPoints.Add(hPPoint);   
+                // Animate appearing
+                StartCoroutine(AnimateHpGain(hPPoint));
             }
         }
     }
