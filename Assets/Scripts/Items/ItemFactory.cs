@@ -14,7 +14,15 @@ public class ItemFactory : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        if (PlayerFlags.Instance.HasFlag("has_schnapps"))
+        {
+            Item schapps = (Item)Activator.CreateInstance(typeof(SchappsItem));
+            Player.Instance.GetItems().Add(schapps);
+        }
     }
 
     private Type[] itemTypes = new Type[]

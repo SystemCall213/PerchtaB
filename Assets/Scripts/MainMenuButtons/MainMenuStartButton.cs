@@ -4,15 +4,19 @@ using UnityEngine;
 public class MainMenuStart : MonoBehaviour
 {
     public GameObject animator;
+    public AudioClip startGameAnimMusicSource;
 
     public void StartGame()
     {
         GetComponent<ButtonClick>().Play();
+        AudioManager.Instance.StopSoundEffectMusic();
         StartCoroutine(PlayStartAnimation());
     }
 
     private IEnumerator PlayStartAnimation()
     {
+        AudioManager.Instance.PlayMusic(startGameAnimMusicSource, false);
+
         animator.GetComponent<SpriteRenderer>().enabled = true;
         Animator anim = animator.GetComponent<Animator>();
         anim.enabled = true;

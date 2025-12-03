@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        print("enemy is here");
 
         Instance = this;
     }

@@ -35,6 +35,8 @@ public class QTEAttack : PlayerAttack
 
     public override void FinishAttack()
     {
+        isAttacking = false;
+
         foreach (var s in symbols)
             Destroy(s.gameObject);
         symbols.Clear();
@@ -59,16 +61,9 @@ public class QTEAttack : PlayerAttack
             yield return null;
 
         SpawnSymbols();
-        HighlightFirst();
 
         while (isAttacking)
         {
-            if (symbols.Count == 0)
-            {
-                EndAttack();
-                yield break;
-            }
-
             char expected = symbols[0].Key;
 
             if (AnyWASDKeyPressed() && !CheckKeyPressed(expected))
@@ -95,14 +90,16 @@ public class QTEAttack : PlayerAttack
 
     private void SpawnSymbols()
     {
-        foreach (var s in symbols)
-            Destroy(s.gameObject);
+        foreach (var child in qteSymbolsHolder.GetComponentsInChildren<QTESymbol>())
+            Destroy(child.gameObject);
         symbols.Clear();
 
         for (int i = 0; i < 6; i++)
         {
             AddNewSymbol();
         }
+
+        HighlightFirst();
     }
 
     private void HighlightFirst()
@@ -130,6 +127,8 @@ public class QTEAttack : PlayerAttack
 
     private void HandleCorrectKey()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.girlAttacking);
+
         QTESymbol first = symbols[0];
         first.SetOutlineGreen();
         correctPressedSymbols++;
@@ -139,23 +138,16 @@ public class QTEAttack : PlayerAttack
         symbols.RemoveAt(0);
 
         LeanTween.moveLocal(first.gameObject, targetPos, 0.25f).setEaseOutQuad();
-        LeanTween.scale(first.gameObject, Vector3.zero, 0.25f).setEaseInBack()
-            .setOnComplete(() =>
-            {
-                Destroy(first.gameObject);
-            });
+        LeanTween.scale(first.gameObject, Vector3.zero, 0.25f).setEaseInBack();
         qteSymbolsHolder.firstBatch -= 1;
         if (qteSymbolsHolder.firstBatch == 0) qteSymbolsHolder.firstBatch = 3;
 
-        // New first symbol should be enlarged
-        AddNewSymbol();
-        HighlightFirst();
-    }
+        first.enabled = false;
 
-    private void EndAttack()
-    {
-        isAttacking = false;
-        qteSymbolsHolder.gameObject.SetActive(false);
+        // New first symbol should be enlarged
+        HighlightFirst();
+
+        if (symbols.Count == 0) SpawnSymbols();
     }
 
     private void AddNewSymbol()

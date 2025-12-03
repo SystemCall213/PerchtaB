@@ -8,13 +8,21 @@ public class RestButton : MonoBehaviour
 
     public void Rest()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClicked);
         if (!restUsed)
         {
-            Player.Instance.Heal(healAmount);
-            RoundManager.Instance.ToggleButtons();
-            BattleText.Instance.SetText("You healed 5 hp!");
-            StartCoroutine(StartRound());
-            restUsed = true;
+            if (Player.Instance.hPBar.CurrentHp() < Player.Instance.hPBar.MaxHp())
+            {
+                Player.Instance.Heal(healAmount);
+                RoundManager.Instance.ToggleButtons();
+                BattleText.Instance.SetText("You healed 5 hp!");
+                StartCoroutine(StartRound());
+                restUsed = true;   
+            }
+            else
+            {
+                BattleText.Instance.SetText("You have full hp!");
+            }
         }
     }
 

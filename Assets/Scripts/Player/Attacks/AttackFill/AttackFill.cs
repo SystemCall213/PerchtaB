@@ -58,6 +58,8 @@ public class AttackFill : PlayerAttack
 
     public override void FinishAttack()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.girlAttacking);
+
         attackImage.SetActive(false);
         attackImageActive = false;
 

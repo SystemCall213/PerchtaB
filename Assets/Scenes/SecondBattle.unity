@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7814499704278891695, guid: a5d83343e7be10c4da8f98ca42991037, type: 3}
+      propertyPath: battleSceneName
+      value: SecondBattle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1748,6 +1752,75 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0
   numOfRounds: 1
   delayBetweenRounds: 1
+--- !u!1001 &1018142937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1372418509571692125, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_Name
+      value: BgMusicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089839274654657949, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089839274654657949, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: bgMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 5961e09aa4ee443469f5a4cecfe56f4c, type: 3}
+    - target: {fileID: 4089839274654657949, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: bgMusicVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.34995407
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0059695393
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.8551154
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
 --- !u!1 &1056102650
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,6 +3677,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8016731878188783350, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016731878188783350, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016731878188783350, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016731878188783350, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3732,3 +3817,4 @@ SceneRoots:
   - {fileID: 319109670}
   - {fileID: 1788241421}
   - {fileID: 243702570}
+  - {fileID: 1018142937}

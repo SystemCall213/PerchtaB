@@ -9,11 +9,19 @@ public class UseItemManager : MonoBehaviour
     public ItemButton itemButtonPrefab;
     public BattleText text;
     public HorizontalLayoutGroup itemsHolder;
+    public GameObject itemsContainer;
 
     public void UseItems()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClicked);
         if (Player.Instance.GetItems().Count > 0)
         {
+            foreach (ItemButton itemButton in itemsHolder.GetComponentsInChildren<ItemButton>())
+            {
+                Destroy(itemButton.gameObject);
+            }
+
+            itemsContainer.SetActive(true);
             RoundManager.Instance.ToggleButtons();
 
             text.Disable();
@@ -34,6 +42,7 @@ public class UseItemManager : MonoBehaviour
 
     private void OnItemUsed(Item item)
     {
+        itemsContainer.SetActive(false);
         text.Enable();
         text.SetText($"Used: {item.itemName}");
 
@@ -45,7 +54,10 @@ public class UseItemManager : MonoBehaviour
 
         item.ApplyEffect();
 
-        StartCoroutine(StartRound());
+        if (item is not SchappsItem)
+        {
+            StartCoroutine(StartRound());   
+        }
     }
 
     private IEnumerator StartRound()
@@ -53,5 +65,11 @@ public class UseItemManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         RoundManager.Instance.Toggle();
+    }
+
+    public void BackPressed()
+    {
+        itemsContainer.SetActive(false);
+        RoundManager.Instance.ToggleButtons();
     }
 }

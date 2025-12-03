@@ -8,6 +8,8 @@ public class AttacksManager : MonoBehaviour
 
     public void ChooseAndStartAttack()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClicked);
+
         BattleText.Instance.SetText("");
         int maxHp = Enemy.Instance.hPBar.MaxHp();
         int currentHp = Enemy.Instance.hPBar.CurrentHp();

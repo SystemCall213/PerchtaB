@@ -92,6 +92,7 @@ public class JITAttack : PlayerAttack
     {
         if (currentDmg > 0)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.girlAttacking);
             Enemy.Instance.TakeDamage(currentDmg);
             return;
         }

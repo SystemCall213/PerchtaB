@@ -21,11 +21,12 @@ public class Player : MonoBehaviour
         }
 
         Instance = this;
+
+        items = new List<Item>();
     }
 
     private void Start()
     {
-        items = new List<Item>();
         movement = GetComponent<PlayerMovement>();
         position = GetComponent<Transform>();
     }
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour
 
     public void AddRandomItem()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClicked);
         RoundManager.Instance.ToggleButtons();
 
         Item item = ItemFactory.Instance.CreateRandomItem();
