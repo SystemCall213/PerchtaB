@@ -146,19 +146,6 @@ public class QTEAttack : PlayerAttack
             });
         qteSymbolsHolder.firstBatch -= 1;
         if (qteSymbolsHolder.firstBatch == 0) qteSymbolsHolder.firstBatch = 3;
-            
-
-        // Shift remaining left (tween)
-        /*
-        for (int i = 0; i < symbols.Count; i++)
-        {
-            RectTransform rt = symbols[i].GetComponent<RectTransform>();
-            Vector3 original = rt.localPosition;
-            Vector3 shifted = original + new Vector3(-25f, 0, 0);
-
-            LeanTween.moveLocal(rt.gameObject, shifted, 0.2f).setEaseOutQuad();
-        }
-        */
 
         // New first symbol should be enlarged
         AddNewSymbol();

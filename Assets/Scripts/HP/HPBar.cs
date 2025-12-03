@@ -8,6 +8,7 @@ public class HPBar : MonoBehaviour
     public HPPoint hPPointPrefab;
     public int maxHp;
     private List<HPPoint> hPPoints;
+    public Sprite hpPointSprite;
 
     // Queue for sequential processing
     private readonly Queue<HPPoint> damageQueue = new Queue<HPPoint>();
@@ -126,6 +127,8 @@ public class HPBar : MonoBehaviour
                     Quaternion.identity,
                     transform
                 );
+
+                hPPoint.sprite = hpPointSprite;
 
                 // Add to list BEFORE animating (so CurrentHp is correct)
                 hPPoints.Add(hPPoint);

@@ -10,7 +10,6 @@ public class JITAttack : PlayerAttack
     public JITHitZone twoDmgHitZone;
 
     [Header("Settings")]
-    public KeyCode attackKey = KeyCode.Space;
     public float baseSpeed = 800f;      // starting movement speed
     public float speedIncrease = 40f;   // added every successful hit
 
@@ -40,7 +39,7 @@ public class JITAttack : PlayerAttack
 
         MoveMarker();
 
-        if (Input.GetKeyDown(attackKey))
+        if (Input.anyKeyDown)
             CheckHit();
     }
 
@@ -101,7 +100,6 @@ public class JITAttack : PlayerAttack
 
     private void ZoneInteraction(int dmg)
     {
-        print(dmg);
         currentDmg = dmg;
     }
 }

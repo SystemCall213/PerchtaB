@@ -4,7 +4,7 @@ using UnityEngine;
 public class RestButton : MonoBehaviour
 {
     public int healAmount = 5;
-    private bool restUsed = false;
+    public bool restUsed = false;
 
     public void Rest()
     {

@@ -34,8 +34,20 @@ public class RoundManager : MonoBehaviour
 
         foreach (Button button in btns)
         {
-            bool isInteractable = button.interactable;
-            button.interactable = !isInteractable;
+            bool canBeToggled = true;
+            if (button.GetComponent<RestButton>() != null)
+            {
+                RestButton restButton = button.GetComponent<RestButton>();
+                if (restButton.restUsed)
+                {
+                    canBeToggled = false;        
+                }
+            }
+            if (canBeToggled)
+            {
+                bool isInteractable = button.interactable;
+                button.interactable = !isInteractable;   
+            }
         }
     }
 

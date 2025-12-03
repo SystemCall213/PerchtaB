@@ -1981,18 +1981,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3425980746114973139, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
-      propertyPath: maxHp
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 3573030015109932847, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e74bd0be690321248b9007104a651bc0, type: 3}
-    - target: {fileID: 3631996096107725395, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3759872761460556114, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: m_Name
       value: MainCanvas
@@ -2041,10 +2033,6 @@ PrefabInstance:
       propertyPath: textActions
       value: 
       objectReference: {fileID: 1516050217}
-    - target: {fileID: 6050020737083995858, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
-      propertyPath: maxHp
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 7282688522940340988, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
