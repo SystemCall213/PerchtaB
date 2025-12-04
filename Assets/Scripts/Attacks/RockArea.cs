@@ -24,9 +24,11 @@ public class RockArea : AttackArea
     {
         yield return new WaitForSeconds(1f);
 
-        spriteRenderer.enabled = false;
-
         Rock newRock = Instantiate(rockPrefab, start.position, Quaternion.identity);
         newRock.Move(end);
+
+        yield return new WaitForSeconds(1.5f);
+
+        spriteRenderer.enabled = false;
     }
 }

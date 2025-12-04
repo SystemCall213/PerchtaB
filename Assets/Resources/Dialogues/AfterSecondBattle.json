@@ -23,13 +23,35 @@
     {
       "id": "line5",
       "speaker": "Perchten",
-      "text": "It’s such a shame, ma’dear that I am utterly out of time, oh, so out of time. I could chat with you and made you a lovely, oh, JUST LOVELY piece of meat pie. You’d have such a lovely, tender, delicate, REFINED meat… But still I must go… Continue getting rid of the mess, ma’sweetie, Oh continue Getting RID OF IT!"
+      "text": "It’s such a shame, ma’dear that I am utterly out of time, oh, so out of time."
+    },
+    {
+      "speaker": "Perchten",
+      "text": "I could chat with you and made you a lovely, oh, JUST LOVELY piece of meat pie."
+    },
+    {
+      "speaker": "Perchten",
+      "text": "You’d have such a lovely, tender, delicate, REFINED meat…"
+    },
+    {
+      "speaker": "Perchten",
+      "text": "But still I must go… Continue getting rid of the mess, ma’sweetie, Oh continue Getting RID OF IT!"
     },
     {
       "id": "lineSchnapps2",
       "speaker": "Perchten",
       "conditionFlag": "battle_easier",
-      "text": "What a generous child, oh, what a generous one! GIVE IT! I shall drink it, oh, I will drink it all alone… And you little precious child continue with that filthy house, continue your good work!"
+      "text": "What a generous child, oh, what a generous one! GIVE IT!"
+    },
+    {
+      "speaker": "Perchten",
+      "conditionFlag": "battle_easier",
+      "text": "I shall drink it, oh, I will drink it all alone…"
+    },
+    {
+      "speaker": "Perchten",
+      "conditionFlag": "battle_easier",
+      "text": "And you little precious child continue with that filthy house, continue your good work!"
     }
   ]
 }

@@ -12,7 +12,7 @@ public class BadEnding : MonoBehaviour
 
     private IEnumerator BackToMainMenu()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(6f);
         SceneFader.Instance.FadeToScene(sceneToTransitionTo);
     }
 }

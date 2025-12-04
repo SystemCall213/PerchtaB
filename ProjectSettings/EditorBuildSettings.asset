@@ -33,9 +33,15 @@ EditorBuildSettings:
     path: Assets/Scenes/ThirdBattle.unity
     guid: 510e470260d1af04e93005d01f6f721c
   - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
-    guid: ed0e38fee6e2c0b4b9d844cfcf0cc05b
+    path: Assets/Scenes/AfterThirdBattle.unity
+    guid: f590604e7f6688044b278945a274b846
   - enabled: 1
     path: Assets/Scenes/BadEnding.unity
     guid: ff93592fe6e1c084ab07c91a92496d5c
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: 63660acc43e76784dbd36951bf6e2567
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: ed0e38fee6e2c0b4b9d844cfcf0cc05b
   m_configObjects: {}

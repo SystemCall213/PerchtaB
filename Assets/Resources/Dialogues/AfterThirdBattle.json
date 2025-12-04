@@ -1,0 +1,51 @@
+{
+  "lines": [
+    {
+      "speaker": "Perchten",
+      "text": "…"
+    },
+    {
+      "speaker": "Perchten",
+      "text": "… You’ve cleaned."
+    },
+    {
+      "choices": [
+        {
+          "speaker": "",
+          "text": "*nod*",
+          "nextLineId": "line6"
+        },
+        {
+          "speaker": "",
+          "text": "*tighten a handkerchief in hands*",
+          "nextLineId": "line6"
+        }
+      ]
+    },
+    {
+      "id": "line6",
+      "speaker": "Perchten",
+      "text": "… Not like mother"
+    },
+    {
+      "id": "line6",
+      "speaker": "Perchten",
+      "text": "… good child… alive child…"
+    },
+    {
+      "id": "line6",
+      "speaker": "Perchten",
+      "text": "...We will visit you next year…"
+    },
+    {
+      "id": "line6",
+      "speaker": "Perchten",
+      "text": "...be a good child…"
+    },
+    {
+      "id": "line6",
+      "speaker": "Perchten",
+      "text": "...keep the Filth OUT."
+    }
+  ]
+}

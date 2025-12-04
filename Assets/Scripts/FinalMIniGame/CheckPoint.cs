@@ -8,7 +8,7 @@ public class CheckPoint : MonoBehaviour
     private SpriteRenderer sr;
     private Color baseColor;
 
-    private void Start()
+    private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         baseColor = sr.color;
@@ -43,7 +43,7 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && isActive)
         {
             PathDrawer drawer = FindObjectOfType<PathDrawer>();
             drawer.HitCheckpoint(this);
