@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GoodEnding.unity
     guid: 63660acc43e76784dbd36951bf6e2567
   - enabled: 1
+    path: Assets/Scenes/Titles.unity
+    guid: 0c164039ebd15a549abda4a3917c6c1e
+  - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: ed0e38fee6e2c0b4b9d844cfcf0cc05b
   m_configObjects: {}

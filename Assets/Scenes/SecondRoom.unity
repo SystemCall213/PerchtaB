@@ -291,7 +291,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -397,6 +397,18 @@ PrefabInstance:
     - target: {fileID: 1372418509571692125, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
       propertyPath: m_Name
       value: BgMusicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089839274654657949, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: bgMusicVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089839274654657949, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: bgSoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: e2ba8c8d9414be94385e991757f70f8c, type: 3}
+    - target: {fileID: 4089839274654657949, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
+      propertyPath: bgSoundEffectVolume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6748432905149499370, guid: 8cedf36a0ba93c1479bdad3ad784b4e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -553,7 +565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 234.02, y: -242}
+  m_AnchoredPosition: {x: 234.02002, y: -242}
   m_SizeDelta: {x: -1401.26, y: -672.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027344288
@@ -646,11 +658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7301595375305029698, guid: 8457de0c7a127ea4eb49e1e26358ee6c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7301595375305029698, guid: 8457de0c7a127ea4eb49e1e26358ee6c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7301595375305029698, guid: 8457de0c7a127ea4eb49e1e26358ee6c, type: 3}
       propertyPath: m_LocalScale.x
@@ -694,11 +706,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7301595375305029698, guid: 8457de0c7a127ea4eb49e1e26358ee6c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 825
+      value: 782
       objectReference: {fileID: 0}
     - target: {fileID: 7301595375305029698, guid: 8457de0c7a127ea4eb49e1e26358ee6c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 410
+      value: 315
       objectReference: {fileID: 0}
     - target: {fileID: 7301595375305029698, guid: 8457de0c7a127ea4eb49e1e26358ee6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -63,7 +63,7 @@ public class AttackFill : PlayerAttack
         attackImage.SetActive(false);
         attackImageActive = false;
 
-        int dmg = (int)(fill / 20);
+        int dmg = (int)(fill / 19);
 
         Enemy.Instance.TakeDamage(dmg);
 

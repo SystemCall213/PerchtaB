@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     public void TakeDamage()
     {
         int currentHp = hPBar.TakeDmg(1);
+        if (currentHp > 0) AudioManager.Instance.PlaySFX(AudioManager.Instance.girlGettingDamage);
         if (currentHp == 0 && !alreadyDead)
         {
             alreadyDead = true;
@@ -59,14 +60,21 @@ public class Player : MonoBehaviour
     public void AddRandomItem()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClicked);
-        RoundManager.Instance.ToggleButtons();
+        if (items.Count < 2)
+        {
+            RoundManager.Instance.ToggleButtons();
 
-        Item item = ItemFactory.Instance.CreateRandomItem();
-        items.Add(item);
+            Item item = ItemFactory.Instance.CreateRandomItem();
+            items.Add(item);
 
-        BattleText.Instance.SetText("You found " + item.itemName);
+            BattleText.Instance.SetText("You found " + item.itemName);
 
-        StartCoroutine(StartRound());
+            StartCoroutine(StartRound());   
+        }
+        else
+        {
+            BattleText.Instance.SetText("Your inventory is full!");
+        }
     }
 
     private IEnumerator StartRound()

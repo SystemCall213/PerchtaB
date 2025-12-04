@@ -55,37 +55,45 @@ public class RoundManager : MonoBehaviour
     {
         if (Enemy.Instance.hPBar.CurrentHp() != 0)
         {
-            if (isExpanded)
-            {
-                SpriteRenderer playerSprite = Player.Instance.GetComponent<SpriteRenderer>();
-                StartCoroutine(hidePlayerSprite(playerSprite));
-                BattleText.Instance.SetText("");
-                ToggleButtons();
-            }
-            else
-            {
-                Transform playerTransform = Player.Instance.GetTransform();
-                playerTransform.localPosition = new Vector3(0, 0, 0);
-                SpriteRenderer playerSprite = Player.Instance.GetComponent<SpriteRenderer>();
-                StartCoroutine(showPlayerSprite(playerSprite));
-            }
-            BattleText.Instance.SetText("");
             //battleField.TogglePanel();
-            StartCoroutine(moveEnemy());
-            StartCoroutine(moveButtons());
-            StartCoroutine(moveText());
-            //StartCoroutine(moveHpBars());
-            if (!isExpanded) 
-            {
-                enemy.Execute();
-                StartCoroutine(showBattlefield());
-            }
-            else
-            {
-                StartCoroutine(hideBattlefield());
-            }
-            isExpanded = !isExpanded;   
+            StartCoroutine(moveEverything());
         }
+    }
+
+    private IEnumerator moveEverything()
+    {
+        if (!isExpanded) 
+        {
+            enemy.Execute();
+            StartCoroutine(showBattlefield());
+        }
+        else
+        {
+            StartCoroutine(hideBattlefield());
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        if (isExpanded)
+        {
+            SpriteRenderer playerSprite = Player.Instance.GetComponent<SpriteRenderer>();
+            StartCoroutine(hidePlayerSprite(playerSprite));
+            BattleText.Instance.SetText("");
+            ToggleButtons();
+        }
+        else
+        {
+            Transform playerTransform = Player.Instance.GetTransform();
+            playerTransform.localPosition = new Vector3(0, 0, 0);
+            SpriteRenderer playerSprite = Player.Instance.GetComponent<SpriteRenderer>();
+            StartCoroutine(showPlayerSprite(playerSprite));
+        }
+
+        StartCoroutine(moveEnemy());
+        StartCoroutine(moveButtons());
+        StartCoroutine(moveText());
+        //StartCoroutine(moveHpBars());
+        isExpanded = !isExpanded;
     }
 
     private IEnumerator showPlayerSprite(SpriteRenderer playerSprite)
@@ -139,6 +147,8 @@ public class RoundManager : MonoBehaviour
 
     private IEnumerator showBattlefield()
     {
+        yield return new WaitForSeconds(3f);
+
         Color c = battlefield.color;
         float elapsed = 0f;
         float duration = 2f; 

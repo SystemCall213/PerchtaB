@@ -4,6 +4,7 @@ using UnityEngine;
 public class Titles : MonoBehaviour
 {
     public Animator animator;
+    public AudioClip startGameAnimMusicSource;
 
     void Update()
     {
@@ -19,6 +20,8 @@ public class Titles : MonoBehaviour
 
     private IEnumerator PlayStartAnimation()
     {
+        AudioManager.Instance.PlayMusic(startGameAnimMusicSource, false);
+        
         Animator anim = animator.GetComponent<Animator>();
 
         // wait until animation fully plays

@@ -178,62 +178,6 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0.1
   numOfRounds: 1
   delayBetweenRounds: 1
---- !u!1 &152757771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 152757772}
-  - component: {fileID: 152757773}
-  m_Layer: 0
-  m_Name: RockAttack6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &152757772
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152757771}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1060177769}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &152757773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152757771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackAreas:
-  - {fileID: 1408616156}
-  - {fileID: 1408616162}
-  - {fileID: 1408616158}
-  - {fileID: 1408616159}
-  - {fileID: 1408616167}
-  - {fileID: 1408616170}
-  - {fileID: 1408616157}
-  - {fileID: 1408616155}
-  delayBetweenExecutingAreas: 0.5
-  numOfRounds: 1
-  delayBetweenRounds: 1
 --- !u!1 &169036567
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,9 +546,64 @@ Transform:
   - {fileID: 1583314060}
   - {fileID: 1060177769}
   - {fileID: 1056102651}
-  - {fileID: 695949276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &386697252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386697253}
+  - component: {fileID: 386697254}
+  m_Layer: 0
+  m_Name: RockAttack6 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &386697253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386697252}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1060177769}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &386697254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386697252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAreas:
+  - {fileID: 1408616170}
+  - {fileID: 1408616167}
+  - {fileID: 1408616159}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616156}
+  - {fileID: 1408616162}
+  - {fileID: 1408616155}
+  delayBetweenExecutingAreas: 0
+  numOfRounds: 2
+  delayBetweenRounds: 4
 --- !u!1 &409703867
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +762,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2173884310623845590, guid: bf869ec469a7e884797a6016a7325680, type: 3}
   m_PrefabInstance: {fileID: 438967655}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &559703086
+--- !u!1 &547210123
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -771,62 +770,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 559703087}
-  - component: {fileID: 559703088}
+  - component: {fileID: 547210124}
+  - component: {fileID: 547210125}
   m_Layer: 0
-  m_Name: RockAttack8
+  m_Name: RockAttack6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &559703087
+--- !u!4 &547210124
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559703086}
+  m_GameObject: {fileID: 547210123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 695949276}
+  m_Father: {fileID: 1583314060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &559703088
+--- !u!114 &547210125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559703086}
+  m_GameObject: {fileID: 547210123}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackAreas:
-  - {fileID: 1408616169}
-  - {fileID: 1408616166}
-  - {fileID: 1408616168}
-  - {fileID: 1408616157}
-  - {fileID: 1408616160}
-  - {fileID: 1408616156}
-  - {fileID: 1408616159}
-  - {fileID: 1408616163}
-  - {fileID: 1408616161}
-  - {fileID: 1408616162}
-  - {fileID: 1408616165}
-  - {fileID: 1408616158}
-  - {fileID: 1408616164}
-  - {fileID: 1408616155}
   - {fileID: 1408616170}
   - {fileID: 1408616167}
-  delayBetweenExecutingAreas: 0.5
-  numOfRounds: 1
-  delayBetweenRounds: 1
+  - {fileID: 1408616159}
+  - {fileID: 1408616158}
+  - {fileID: 1408616157}
+  - {fileID: 1408616156}
+  - {fileID: 1408616162}
+  - {fileID: 1408616155}
+  delayBetweenExecutingAreas: 0
+  numOfRounds: 2
+  delayBetweenRounds: 4
 --- !u!1 &616906709
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,56 +896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04eeab864da15424fa175a8084882823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &695949275
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 695949276}
-  - component: {fileID: 695949277}
-  m_Layer: 0
-  m_Name: Pattern1 (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &695949276
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695949275}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.57, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1417876211}
-  - {fileID: 559703087}
-  - {fileID: 2109837387}
-  m_Father: {fileID: 319109670}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &695949277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695949275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e340d20a1ef81748b90697e11e8df95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenAttacks: 1
-  timeBuffer: 7.5
-  battleText: 
 --- !u!1 &794314835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,7 +1810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
   timeBuffer: 10
-  battleText: 
+  battleText: Creature opens its mouth, trying to grab you.
 --- !u!1 &1060177768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1842,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 940033068}
-  - {fileID: 152757772}
+  - {fileID: 386697253}
   - {fileID: 1680192430}
   m_Father: {fileID: 319109670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1917,9 +1858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e340d20a1ef81748b90697e11e8df95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 4
-  timeBuffer: 2
-  battleText: I'm a bitch my name is Robert
+  timeBetweenAttacks: 2
+  timeBuffer: 4
+  battleText: Creature rages to the ceiling and rabble starts to fall down on you.
 --- !u!114 &1063509263 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 364607586155460010, guid: 28733b2d92512ec4d9f4b3c839a6bdea, type: 3}
@@ -2365,58 +2306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6ad16729c903648849777c2bd12725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1417876210
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1417876211}
-  - component: {fileID: 1417876212}
-  m_Layer: 0
-  m_Name: SplinterAttack3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1417876211
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417876210}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 695949276}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1417876212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417876210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackAreas:
-  - {fileID: 2118929868}
-  - {fileID: 2118929884}
-  - {fileID: 2118929882}
-  - {fileID: 2118929874}
-  delayBetweenExecutingAreas: 0.4
-  numOfRounds: 1
-  delayBetweenRounds: 0.5
 --- !u!1 &1567271286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2400,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1567271287}
-  - {fileID: 1779321435}
+  - {fileID: 547210124}
   m_Father: {fileID: 319109670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1583314061
@@ -2528,7 +2417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
   timeBuffer: 6
-  battleText: 
+  battleText: Creature rages through the rooms and shards of its body are being thrown
+    all around the room.
 --- !u!1 &1620656349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,62 +2655,6 @@ MonoBehaviour:
   - {fileID: 1408616162}
   - {fileID: 1408616161}
   delayBetweenExecutingAreas: 0.1
-  numOfRounds: 1
-  delayBetweenRounds: 1
---- !u!1 &1779321434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1779321435}
-  - component: {fileID: 1779321436}
-  m_Layer: 0
-  m_Name: RockAttack6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1779321435
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779321434}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1583314060}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1779321436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779321434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackAreas:
-  - {fileID: 1408616158}
-  - {fileID: 1408616159}
-  - {fileID: 1408616157}
-  - {fileID: 1408616170}
-  - {fileID: 1408616156}
-  - {fileID: 1408616155}
-  - {fileID: 1408616162}
-  - {fileID: 1408616167}
-  delayBetweenExecutingAreas: 0.5
   numOfRounds: 1
   delayBetweenRounds: 1
 --- !u!1 &1788241419
@@ -3135,58 +2969,6 @@ MonoBehaviour:
   delayBetweenExecutingAreas: 0.1
   numOfRounds: 2
   delayBetweenRounds: 1
---- !u!1 &2109837386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2109837387}
-  - component: {fileID: 2109837388}
-  m_Layer: 0
-  m_Name: SplinterAttack2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2109837387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109837386}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 695949276}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2109837388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109837386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3eae932e6e2a8143aaacbeace5c38ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackAreas:
-  - {fileID: 2118929861}
-  - {fileID: 2118929882}
-  - {fileID: 2118929884}
-  - {fileID: 2118929883}
-  delayBetweenExecutingAreas: 0.4
-  numOfRounds: 1
-  delayBetweenRounds: 0.5
 --- !u!1001 &2118929860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3566,7 +3348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4084211287911852292, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: patterns.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4084211287911852292, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: patterns.Array.data[0]
@@ -3583,7 +3365,7 @@ PrefabInstance:
     - target: {fileID: 4084211287911852292, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: patterns.Array.data[3]
       value: 
-      objectReference: {fileID: 695949277}
+      objectReference: {fileID: 0}
     - target: {fileID: 4307609556859432816, guid: b9da59ca3c106f64cab95fbb0ef75c80, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

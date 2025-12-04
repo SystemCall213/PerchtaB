@@ -10,7 +10,8 @@ public class MainMenuStart : MonoBehaviour
     {
         GetComponent<ButtonClick>().Play();
         AudioManager.Instance.StopSoundEffectMusic();
-        StartCoroutine(PlayStartAnimation()); 
+        PlayerFlags.Instance.RemoveFlag("has_schapps");
+        StartCoroutine(PlayStartAnimation());
     }
 
     private IEnumerator PlayStartAnimation()

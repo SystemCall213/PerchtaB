@@ -9,6 +9,7 @@ public class DeathScreen : MonoBehaviour
     private float fadeInDuration = 2f;
     private Image deathScreen;
     public GameObject restartButton;
+    public GameObject gotoMainMenuButton;
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class DeathScreen : MonoBehaviour
 
         deathScreen.enabled = true;
         restartButton.SetActive(true);
+        gotoMainMenuButton.SetActive(true);
 
         StartCoroutine(FadeDeathScreen());
     }
@@ -57,8 +59,6 @@ public class DeathScreen : MonoBehaviour
     {
         float startAlpha = deathScreen.color.a;
         float t = 0f;
-
-        Image restartBtnImg = restartButton.GetComponent<Image>();
 
         while (t < fadeInDuration)
         {
@@ -69,10 +69,6 @@ public class DeathScreen : MonoBehaviour
             Color c = deathScreen.color;
             c.a = a / 255f;
             deathScreen.color = c;
-
-            Color c2 = restartBtnImg.color;
-            c2.a = a / 255f;
-            restartBtnImg.color = c2;
 
             yield return null;
         }

@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 450796311}
   - component: {fileID: 450796310}
   - component: {fileID: 450796309}
+  - component: {fileID: 450796313}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -768,6 +769,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &450796313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450796308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcc502123a82514db82dadb0a084a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  startGameAnimMusicSource: {fileID: 0}
 --- !u!1 &514570804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,9 +3199,12 @@ MonoBehaviour:
   sfxSource: {fileID: 1145766682}
   buttonClicked: {fileID: 8300000, guid: b1759d6e426d6f24a9a0bc62569cee78, type: 3}
   girlAttacking: {fileID: 8300000, guid: 3a0997040ce11fd4f9ab79bf657260b2, type: 3}
+  girlGettingDamage: {fileID: 8300000, guid: d8d6bbc7763292042b6f6afa73144613, type: 3}
+  secondRoomTickling: {fileID: 8300000, guid: e2ba8c8d9414be94385e991757f70f8c, type: 3}
+  thirdRoomWind: {fileID: 8300000, guid: 1fb9134f971d4e14c83df6b65bfe9cb5, type: 3}
   musicVolume: 0.5
   soundEffectVolume: 0.5
-  sfxVolume: 1
+  sfxVolume: 0.3
   masterVolumeMultiplier: 1
 --- !u!4 &1587797320
 Transform:

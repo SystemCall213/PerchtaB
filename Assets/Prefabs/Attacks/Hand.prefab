@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minNumOfTries: 7
-  maxNumOfTries: 10
+  maxNumOfTries: 8
   timeBetweenExtending: 0.05
   armPrefab: {fileID: 8901893830701342650, guid: 8773a0fb49a96734cb2eb923156daef9, type: 3}
   turnDegreesPerStep: 60

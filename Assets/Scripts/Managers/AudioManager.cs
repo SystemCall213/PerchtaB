@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     [SerializeField] public AudioClip buttonClicked;
     [SerializeField] public AudioClip girlAttacking;
+    [SerializeField] public AudioClip girlGettingDamage;
+    [SerializeField] public AudioClip secondRoomTickling;
+    [SerializeField] public AudioClip thirdRoomWind;
 
     [Header("Settings")]
     [Range(0f, 1f)]
@@ -40,7 +43,7 @@ public class AudioManager : MonoBehaviour
     {
         backgroundMusicSource.clip = clip;
         backgroundMusicSource.loop = loop;
-        backgroundMusicSource.volume = musicVolume;
+        backgroundMusicSource.volume = musicVolume * masterVolumeMultiplier;
         backgroundMusicSource.Play();
     }
 
@@ -48,7 +51,7 @@ public class AudioManager : MonoBehaviour
     {
         backgroundSoundEffect.clip = clip;
         backgroundSoundEffect.loop = loop;
-        backgroundSoundEffect.volume = soundEffectVolume;
+        backgroundSoundEffect.volume = soundEffectVolume * masterVolumeMultiplier;
         backgroundSoundEffect.Play();
     }
 
@@ -78,7 +81,7 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         if (clip == null) return;
-        sfxSource.PlayOneShot(clip, sfxVolume);
+        sfxSource.PlayOneShot(clip, sfxVolume * masterVolumeMultiplier);
     }
 
     public void SetSFXVolume(float volume)
