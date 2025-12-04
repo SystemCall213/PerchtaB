@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AfterThirdBattle.unity
     guid: f590604e7f6688044b278945a274b846
   - enabled: 1
+    path: Assets/Scenes/FinalMiniGame.unity
+    guid: 0f47089c530bcbc4db86b6f417d3ae62
+  - enabled: 1
     path: Assets/Scenes/BadEnding.unity
     guid: ff93592fe6e1c084ab07c91a92496d5c
   - enabled: 1

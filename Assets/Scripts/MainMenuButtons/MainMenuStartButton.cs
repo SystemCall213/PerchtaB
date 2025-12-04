@@ -10,7 +10,7 @@ public class MainMenuStart : MonoBehaviour
     {
         GetComponent<ButtonClick>().Play();
         AudioManager.Instance.StopSoundEffectMusic();
-        StartCoroutine(PlayStartAnimation());
+        StartCoroutine(PlayStartAnimation()); 
     }
 
     private IEnumerator PlayStartAnimation()
